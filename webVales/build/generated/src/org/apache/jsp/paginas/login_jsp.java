@@ -68,7 +68,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("              <h1><strong>Bienvenido</strong></h1>\n");
       out.write("            <div id=\"idTransparente\" class=\"index1 container\"></div>\n");
       out.write("            <div id=\"idLogin\" class=\"index2 container\">                 \n");
-      out.write("                <form action=\"../ServLogin\" method=\"POST\">\n");
+      out.write("                <form action=\"/WebVales/Login\" method=\"POST\">\n");
       out.write("                    <div class=\"form-group container-fluid\">\n");
       out.write("                        <label>Usuario</label>\n");
       out.write("                        <input class=\"form-control\" type=\"text\" name=\"txtRutUsuario\"/>\n");
@@ -83,7 +83,19 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                 ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sesionErrorLogin}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("   \n");
-      out.write("                </div>                \n");
+      out.write("                </div>     \n");
+      out.write("                ");
+ String mensaje = (String)request.getAttribute("mensaje");
+                if(mensaje!=null) {
+      out.write("\n");
+      out.write("                <script>\n");
+      out.write("                    alert(\"");
+      out.print(mensaje);
+      out.write("\");\n");
+      out.write("                </script>\n");
+      out.write("             ");
+}
+      out.write("\n");
       out.write("            </div> \n");
       out.write("        </div>\n");
       out.write("        \n");
@@ -92,35 +104,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("     ");
- String mensaje
-                    = (String) request.getAttribute("problema");
-            if (mensaje != null) {
-        
-      out.write("\n");
-      out.write("        <script>\n");
-      out.write("            alert(\"");
-      out.print( mensaje);
-      out.write("\");\n");
-      out.write("        </script>\n");
-      out.write("        ");
- }
-      out.write("\n");
-      out.write("        ");
- String mensaje2
-                    = (String) request.getAttribute("error");
-            if (mensaje2 != null) {
-        
-      out.write("\n");
-      out.write("        <script>\n");
-      out.write("            alert(\"");
-      out.print( mensaje2);
-      out.write("\");\n");
-      out.write("        </script>\n");
-      out.write("        ");
- }
-      out.write("\n");
-      out.write("    </body>\n");
+      out.write("    \n");
       out.write("</html>\n");
       out.write("    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->\n");
       out.write("    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n");

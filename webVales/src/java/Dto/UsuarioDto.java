@@ -6,10 +6,34 @@
 package Dto;
 
 
+
+import Dao.UsuarioDao;
+import org.datacontract.schemas._2004._07.sistemavales.Usuario;
 public class UsuarioDto {
     private String password;
     private String rut;
     private String tipo_usuario_id;
+    private int id_comensal;
+
+    public UsuarioDto(String password, String rut, String tipo_usuario_id, int id_comensal) {
+        this.password = password;
+        this.rut = rut;
+        this.tipo_usuario_id = tipo_usuario_id;
+        this.id_comensal = id_comensal;
+        
+    }  
+
+    public UsuarioDto() {
+    }
+
+    
+    public int getId_comensal() {
+        return id_comensal;
+    }
+
+    public void setId_comensal(int id_comensal) {
+        this.id_comensal = id_comensal;
+    }
 
     public String getPassword() {
         return password;
@@ -41,6 +65,13 @@ public class UsuarioDto {
                 ", tipo_usuario_id=" + tipo_usuario_id + '}';
     }
     
+    
+    public static boolean ValidarLog(String rut, String pass){
+        
+        UsuarioDao userdao = new UsuarioDao();
+        return userdao.ValidarLog(rut,pass);
+    }
+
     
     
 }
