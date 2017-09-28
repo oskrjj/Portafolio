@@ -56,10 +56,21 @@ public class UsuarioDao {
         return dao.validarLogin(rut,pass);
     }
     
+    public static String ObtenerTipoUser(String rut, String pass){
+        UsuarioDao dao = new UsuarioDao();
+        return dao.ObtenerTipoUser(rut,pass);
+    }
+    
     private static Boolean validarLogin(java.lang.String rut, java.lang.String password) {
         org.tempuri.Usuario service = new org.tempuri.Usuario();
         org.tempuri.IUsuario port = service.getBasicHttpBindingIUsuario();
         return port.validarLogin(rut, password);
+    }
+    
+    private static String obtenerTipo(java.lang.String rut, java.lang.String password){
+        org.tempuri.Usuario service = new org.tempuri.Usuario();
+        org.tempuri.IUsuario port = service.getBasicHttpBingdingIUsuario();
+        return port.obtenerTipo(rut, password);
     }
     
 }
