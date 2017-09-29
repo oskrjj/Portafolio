@@ -8,11 +8,13 @@ package Servlet;
 import Dto.UsuarioDto;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,20 +34,54 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        RequestDispatcher dispatcher;
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String rut = request.getParameter("txtRutUsuario".trim());
             String clave = request.getParameter("txtPassword".trim());
+            
             if(rut == " " || clave == " "){
                 request.setAttribute("mensaje", "error Rut o Clave Invalidos");
             }
             if (UsuarioDto.ValidarLog(rut,clave)) {
                 request.setAttribute("mensaje", "Validado Correctamente");
+                String tipoUser = ObtenerTipoUser(rut, clave);
+                if (tipoUser.equalsIgnoreCase("usuario")) {
+                    HttpSession sesion = request.getSession(true);
+                    String nomUsu=ObtenerNombre(rut);
+                    sesion.setAttribute("sesionNombre", nomUsu);
+                    dispatcher = getServletContext().getRequestDispatcher("/HomeUser.jsp");
+                    dispatcher.forward(request, response);
+                }else{
+                    
+                }
             }else{
                 request.setAttribute("mensaje", "Error usuario");
             }
             request.getRequestDispatcher("/paginas/login.jsp").forward(request, response);
         }
+    }
+    
+    public String ObtenerTipoUser(String rut, String pass){
+      UsuarioDto ctrlUsuario = new UsuarioDto();
+      String aux= null;
+        try{
+         aux = ctrlUsuario.ObtenerTipoUser(rut, pass);
+        }catch(Exception ex){
+         ex.printStackTrace();
+        }
+      return aux;
+    }
+    
+    public String ObtenerNombre(String id){
+      UsuarioDto ctrlUsuario = new UsuarioDto();
+      String aux= null;
+        try{
+         aux = ctrlUsuario.ObtenerUserId(id);
+        }catch(Exception ex){
+         ex.printStackTrace();
+        }
+      return aux;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
