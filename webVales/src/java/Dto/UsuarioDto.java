@@ -71,6 +71,11 @@ public class UsuarioDto {
         UsuarioDao userdao = new UsuarioDao();
         return userdao.ValidarLog(rut,pass);
     }
+    
+    public static String obtenerTipoId(String rut){
+        UsuarioDao userdao = new UsuarioDao();
+        return userdao.ObtenerTipoUser(rut);
+    }
 
     
     

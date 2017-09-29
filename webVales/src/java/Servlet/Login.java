@@ -46,14 +46,13 @@ public class Login extends HttpServlet {
             if (UsuarioDto.ValidarLog(rut,clave)) {
                 request.setAttribute("mensaje", "Validado Correctamente");
                 String tipoUser = ObtenerTipoUser(rut, clave);
-                if (tipoUser.equalsIgnoreCase("usuario")) {
+                if (tipoUser.equals("1")) {
                     HttpSession sesion = request.getSession(true);
-                    String nomUsu=ObtenerNombre(rut);
-                    sesion.setAttribute("sesionNombre", nomUsu);
-                    dispatcher = getServletContext().getRequestDispatcher("/HomeUser.jsp");
-                    dispatcher.forward(request, response);
-                }else{
                     
+                    sesion.setAttribute("sesionNombre", rut);
+                  request.getRequestDispatcher("/paginas/adminHome.jsp").forward(request, response);
+                }else{
+                    request.getRequestDispatcher("/paginas/CajeroHome.jsp").forward(request, response);
                 }
             }else{
                 request.setAttribute("mensaje", "Error usuario");
@@ -66,23 +65,14 @@ public class Login extends HttpServlet {
       UsuarioDto ctrlUsuario = new UsuarioDto();
       String aux= null;
         try{
-         aux = ctrlUsuario.ObtenerTipoUser(rut, pass);
+         aux = ctrlUsuario.obtenerTipoId(rut);
         }catch(Exception ex){
          ex.printStackTrace();
         }
       return aux;
     }
     
-    public String ObtenerNombre(String id){
-      UsuarioDto ctrlUsuario = new UsuarioDto();
-      String aux= null;
-        try{
-         aux = ctrlUsuario.ObtenerUserId(id);
-        }catch(Exception ex){
-         ex.printStackTrace();
-        }
-      return aux;
-    }
+   
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
