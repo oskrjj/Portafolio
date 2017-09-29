@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="../css/estilo.css"/>
         <title>JSP Cajero</title>
     </head>
-      <div id="divcabezera">
+      <div id=" divcabezera    ">
         
         <div id="tituloAdmin">
           <h1 style="text-align:center;">Menu Usuario</h1>  
