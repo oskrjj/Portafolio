@@ -1,5 +1,6 @@
 
 package Dto;
+import Dao.EmpleadoDao;
 
 
 public class EmpleadoDto {
@@ -56,6 +57,21 @@ public class EmpleadoDto {
                 ", turno_id=" + turno_id + '}';
     }
     
+    public boolean agregarEmp(String rut, String nomc, String correo, String cargoId, String turnoId){
+        EmpleadoDao empDao = new EmpleadoDao();
+        return empDao.ingresarEmpleado(rut, nomc, correo, cargoId, turnoId);
+    }
+    
+    public static boolean elimEmp(String rut){
+        EmpleadoDao empDao = new EmpleadoDao();
+        return empDao.elimEmpleado(rut);
+        
+    }
+    
+    public boolean modEmp(String rut, String nomc, String correo, String cargoId, String turnoId){
+        EmpleadoDao empDao = new EmpleadoDao();
+        return empDao.modificarEmpleados(rut, nomc, correo, cargoId, turnoId);
+    }
     
     
 }

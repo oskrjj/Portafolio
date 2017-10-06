@@ -4,19 +4,23 @@
  * and open the template in the editor.
  */
 package Dto;
-
-/**
- *
- * @author Yojhan Leiva
- */
+import Dao.CargoDao;
+import org.datacontract.schemas._2004._07.sistemavales.Cargo;
 public class CargoDto {
     private String cargoId;
-    private String desccripcion;
+    private String descripcion;
     private int valorColacion;
+    
+    
+    public CargoDto(){
+        this.cargoId="";
+        this.descripcion="";
+        this.valorColacion=0;
+    }
 
     public CargoDto(String cargoId, String desccripcion, int valorColacion) {
         this.cargoId = cargoId;
-        this.desccripcion = desccripcion;
+        this.descripcion = desccripcion;
         this.valorColacion = valorColacion;
     }
 
@@ -29,11 +33,11 @@ public class CargoDto {
     }
 
     public String getDesccripcion() {
-        return desccripcion;
+        return descripcion;
     }
 
     public void setDesccripcion(String desccripcion) {
-        this.desccripcion = desccripcion;
+        this.descripcion = desccripcion;
     }
 
     public int getValorColacion() {
@@ -43,6 +47,29 @@ public class CargoDto {
     public void setValorColacion(int valorColacion) {
         this.valorColacion = valorColacion;
     }
+    
+    public boolean agregarCargo(String id, String desc, int valor){
+        CargoDao cargodao= new CargoDao();
+        return cargodao.insertarCargo(id, desc, valor);
+    }
+    
+    public boolean elimCargo(String id){
+        CargoDao cargodao= new CargoDao();
+        return cargodao.elimCargo(id);
+    }
+    
+    public boolean modCargo(String id, String desc, int valor){
+        CargoDao cargodao = new CargoDao();
+        return cargodao.modCargo(id, desc, valor);
+    }
+    
+    public String listarCargoId(String id){
+        CargoDao cargodao = new CargoDao();
+        return cargodao.listarId(id);
+    }
+            
+    
+    
     
     
 }

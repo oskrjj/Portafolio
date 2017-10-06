@@ -1,0 +1,23 @@
+
+
+body {
+    background: url('../imagenes/comida.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    
+    
+    }
+    label{
+        font-family: Arial;
+        color: #eb9316;
+    }
+ 
+
+
+ 
+   
+
+
+
