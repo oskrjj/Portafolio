@@ -5,6 +5,9 @@
  */
 package Dto;
 
+import Dao.ServicioDao;
+import java.util.HashSet;
+
 /**
  *
  * @author Yojhan Leiva
@@ -13,9 +16,8 @@ public class ServicioDto {
     private String servicioId;
     private String desc;
 
-    public ServicioDto(String servicioId, String desc) {
-        this.servicioId = servicioId;
-        this.desc = desc;
+    public ServicioDto( ) {
+        
     }
 
     public String getServicioId() {
@@ -34,5 +36,12 @@ public class ServicioDto {
         this.desc = desc;
     }
     
+    public boolean agregarServicioNuevo(ServicioDto servicioN)
+    {
+        ServicioDao dao = new ServicioDao();
+        dao.setIdServicio(servicioN.getServicioId());
+        dao.setDescripcion(servicioN.getDesc());
+        return dao.agregarServ(dao);
+    }
     
 }

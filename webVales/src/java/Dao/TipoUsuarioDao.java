@@ -5,7 +5,7 @@
  */
 package Dao;
 
-import org.datacontract.schemas._2004._07.sistemavales.Usuario;
+
 public class TipoUsuarioDao {
     private int idTipo;
     private String desc;
@@ -27,16 +27,7 @@ public class TipoUsuarioDao {
         this.desc = desc;
     }
     
-    public static String ObtenerTipoUser(String id){
-        TipoUsuarioDao dao = new TipoUsuarioDao();
-        return dao.recuperarIdTipoUsuario(id);
-    }
     
-    private static String recuperarIdTipoUsuario(java.lang.String id) {
-        org.tempuri.Usuario service = new org.tempuri.Usuario();
-        org.tempuri.IUsuario port = service.getBasicHttpBindingIUsuario();
-        return port.recuperarIdTipoUsuario(id);
-    }
     
     
 }

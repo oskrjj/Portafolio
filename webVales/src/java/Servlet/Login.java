@@ -45,7 +45,7 @@ public class Login extends HttpServlet {
             }
             if (UsuarioDto.ValidarLog(rut,clave)) {
                 request.setAttribute("mensaje", "Validado Correctamente");
-                String tipoUser = ObtenerTipoUser(rut, clave);
+                String tipoUser = UsuarioDto.obtenerTipoId(rut);
                 if (tipoUser.equals("1")) {
                     HttpSession sesion = request.getSession(true);
                     
@@ -61,16 +61,7 @@ public class Login extends HttpServlet {
         }
     }
     
-    public String ObtenerTipoUser(String rut, String pass){
-      UsuarioDto ctrlUsuario = new UsuarioDto();
-      String aux= null;
-        try{
-         aux = ctrlUsuario.obtenerTipoId(rut);
-        }catch(Exception ex){
-         ex.printStackTrace();
-        }
-      return aux;
-    }
+   
     
    
 

@@ -5,7 +5,7 @@
  */
 package Dto;
 import Dao.CargoDao;
-import org.datacontract.schemas._2004._07.sistemavales.Cargo;
+
 public class CargoDto {
     private String cargoId;
     private String descripcion;

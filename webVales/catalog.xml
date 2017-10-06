@@ -2,33 +2,33 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:50114/Empleado.svc?xsd=xsd2" uri="src/conf/xml-resources/web-service-references/Empleado/wsdl/localhost_50114/Empleado.svc.xsd_xsd2.xsd"/>
     <system systemId="http://localhost:50114/Servicio.svc?xsd=xsd2" uri="src/conf/xml-resources/web-service-references/Servicio/wsdl/localhost_50114/Servicio.svc.xsd_xsd2.xsd"/>
-    <system systemId="http://localhost:50114/Usuario.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Usuario/wsdl/localhost_50114/Usuario.svc.wsdl"/>
-    <system systemId="http://localhost:50114/Usuario.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Usuario/wsdl/localhost_50114/Usuario.svc.xsd_xsd0.xsd"/>
-    <system systemId="http://localhost:50114/Usuario.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Usuario/wsdl/localhost_50114/Usuario.svc.xsd_xsd1.xsd"/>
     <system systemId="http://localhost:50114/Usuario.svc?xsd=xsd2" uri="src/conf/xml-resources/web-service-references/Usuario/wsdl/localhost_50114/Usuario.svc.xsd_xsd2.xsd"/>
-    <system systemId="http://localhost:50114/Empleado.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Empleado/wsdl/localhost_50114/Empleado.svc.wsdl"/>
-    <system systemId="http://localhost:50114/Empleado.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Empleado/wsdl/localhost_50114/Empleado.svc.xsd_xsd0.xsd"/>
-    <system systemId="http://localhost:50114/Empleado.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Empleado/wsdl/localhost_50114/Empleado.svc.xsd_xsd1.xsd"/>
-    <system systemId="http://localhost:50114/Comensal.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Comensal/wsdl/localhost_50114/Comensal.svc.wsdl"/>
-    <system systemId="http://localhost:50114/Comensal.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Comensal/wsdl/localhost_50114/Comensal.svc.xsd_xsd0.xsd"/>
-    <system systemId="http://localhost:50114/Comensal.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Comensal/wsdl/localhost_50114/Comensal.svc.xsd_xsd1.xsd"/>
-    <system systemId="http://localhost:50114/ServiciosBase.svc?wsdl" uri="src/conf/xml-resources/web-service-references/ServiciosBase/wsdl/localhost_50114/ServiciosBase.svc.wsdl"/>
-    <system systemId="http://localhost:50114/ServiciosBase.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/ServiciosBase/wsdl/localhost_50114/ServiciosBase.svc.xsd_xsd0.xsd"/>
-    <system systemId="http://localhost:50114/ServiciosBase.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/ServiciosBase/wsdl/localhost_50114/ServiciosBase.svc.xsd_xsd1.xsd"/>
     <system systemId="http://localhost:50114/Comensal.svc" uri="src/conf/xml-resources/web-service-references/Comensal_1/wsdl/localhost_50114/Comensal.svc.xml"/>
     <system systemId="http://localhost:50114/Cargo.svc" uri="src/conf/xml-resources/web-service-references/Cargo_1/wsdl/localhost_50114/Cargo.svc.xml"/>
-    <system systemId="http://localhost:50114/Servicio.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Servicio/wsdl/localhost_50114/Servicio.svc.wsdl"/>
-    <system systemId="http://localhost:50114/Servicio.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Servicio/wsdl/localhost_50114/Servicio.svc.xsd_xsd0.xsd"/>
-    <system systemId="http://localhost:50114/Servicio.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Servicio/wsdl/localhost_50114/Servicio.svc.xsd_xsd1.xsd"/>
     <system systemId="http://localhost:50114/Tipo_Usuario.svc" uri="src/conf/xml-resources/web-service-references/Tipo_Usuario/wsdl/localhost_50114/Tipo_Usuario.svc.xml"/>
+    <system systemId="http://localhost:50114/Turno.svc" uri="src/conf/xml-resources/web-service-references/Turno/wsdl/localhost_50114/Turno.svc.xml"/>
     <system systemId="http://localhost:50114/Cargo.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Cargo/wsdl/localhost_50114/Cargo.svc.wsdl"/>
     <system systemId="http://localhost:50114/Cargo.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Cargo/wsdl/localhost_50114/Cargo.svc.xsd_xsd0.xsd"/>
     <system systemId="http://localhost:50114/Cargo.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Cargo/wsdl/localhost_50114/Cargo.svc.xsd_xsd1.xsd"/>
-    <system systemId="http://localhost:50114/Turno.svc" uri="src/conf/xml-resources/web-service-references/Turno/wsdl/localhost_50114/Turno.svc.xml"/>
+    <system systemId="http://localhost:50114/Comensal.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Comensal/wsdl/localhost_50114/Comensal.svc.wsdl"/>
+    <system systemId="http://localhost:50114/Comensal.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Comensal/wsdl/localhost_50114/Comensal.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://localhost:50114/Comensal.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Comensal/wsdl/localhost_50114/Comensal.svc.xsd_xsd1.xsd"/>
+    <system systemId="http://localhost:50114/Empleado.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Empleado/wsdl/localhost_50114/Empleado.svc.wsdl"/>
+    <system systemId="http://localhost:50114/Empleado.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Empleado/wsdl/localhost_50114/Empleado.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://localhost:50114/Empleado.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Empleado/wsdl/localhost_50114/Empleado.svc.xsd_xsd1.xsd"/>
+    <system systemId="http://localhost:50114/Servicio.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Servicio/wsdl/localhost_50114/Servicio.svc.wsdl"/>
+    <system systemId="http://localhost:50114/Servicio.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Servicio/wsdl/localhost_50114/Servicio.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://localhost:50114/Servicio.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Servicio/wsdl/localhost_50114/Servicio.svc.xsd_xsd1.xsd"/>
+    <system systemId="http://localhost:50114/ServiciosBase.svc?wsdl" uri="src/conf/xml-resources/web-service-references/ServiciosBase/wsdl/localhost_50114/ServiciosBase.svc.wsdl"/>
+    <system systemId="http://localhost:50114/ServiciosBase.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/ServiciosBase/wsdl/localhost_50114/ServiciosBase.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://localhost:50114/ServiciosBase.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/ServiciosBase/wsdl/localhost_50114/ServiciosBase.svc.xsd_xsd1.xsd"/>
+    <system systemId="http://localhost:50114/Tipo_Usuario.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Tipo_usuario/wsdl/localhost_50114/Tipo_Usuario.svc.wsdl"/>
+    <system systemId="http://localhost:50114/Tipo_Usuario.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Tipo_usuario/wsdl/localhost_50114/Tipo_Usuario.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://localhost:50114/Tipo_Usuario.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Tipo_usuario/wsdl/localhost_50114/Tipo_Usuario.svc.xsd_xsd1.xsd"/>
     <system systemId="http://localhost:50114/Turno.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Turno/wsdl/localhost_50114/Turno.svc.wsdl"/>
     <system systemId="http://localhost:50114/Turno.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Turno/wsdl/localhost_50114/Turno.svc.xsd_xsd0.xsd"/>
     <system systemId="http://localhost:50114/Turno.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Turno/wsdl/localhost_50114/Turno.svc.xsd_xsd1.xsd"/>
-    <system systemId="http://localhost:50114/Tipo_Usuario.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Tipo_Usuario/wsdl/localhost_50114/Tipo_Usuario.svc.wsdl"/>
-    <system systemId="http://localhost:50114/Tipo_Usuario.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Tipo_Usuario/wsdl/localhost_50114/Tipo_Usuario.svc.xsd_xsd0.xsd"/>
-    <system systemId="http://localhost:50114/Tipo_Usuario.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Tipo_Usuario/wsdl/localhost_50114/Tipo_Usuario.svc.xsd_xsd1.xsd"/>
+    <system systemId="http://localhost:50114/Usuario.svc?wsdl" uri="src/conf/xml-resources/web-service-references/Usuario/wsdl/localhost_50114/Usuario.svc.wsdl"/>
+    <system systemId="http://localhost:50114/Usuario.svc?xsd=xsd0" uri="src/conf/xml-resources/web-service-references/Usuario/wsdl/localhost_50114/Usuario.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://localhost:50114/Usuario.svc?xsd=xsd1" uri="src/conf/xml-resources/web-service-references/Usuario/wsdl/localhost_50114/Usuario.svc.xsd_xsd1.xsd"/>
 </catalog>

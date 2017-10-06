@@ -106,6 +106,38 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/org/tempuri"/>
         <delete dir="${build.generated.dir}/jax-wsCache/ServiciosBase"/>
     </target>
+    <target name="wsimport-client-Tipo_Usuario" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Tipo_Usuario"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Tipo_Usuario" destdir="${build.generated.dir}/jax-wsCache/Tipo_Usuario" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Tipo_Usuario/wsdl/localhost_50114/Tipo_Usuario.svc.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:50114/Tipo_Usuario.svc?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Tipo_Usuario/wsdl/localhost_50114/Tipo_Usuario.svc.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Tipo_Usuario"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Tipo_Usuario">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Tipo_Usuario" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/org/tempuri"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/Tipo_Usuario"/>
+    </target>
+    <target name="wsimport-client-Turno" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Turno"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Turno" destdir="${build.generated.dir}/jax-wsCache/Turno" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Turno/wsdl/localhost_50114/Turno.svc.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:50114/Turno.svc?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Turno/wsdl/localhost_50114/Turno.svc.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Turno"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Turno">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Turno" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/org/tempuri"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/Turno"/>
+    </target>
     <target name="wsimport-client-Usuario" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/Usuario"/>
         <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Usuario" destdir="${build.generated.dir}/jax-wsCache/Usuario" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Usuario/wsdl/localhost_50114/Usuario.svc.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:50114/Usuario.svc?wsdl" xnocompile="true" xendorsed="true">
@@ -122,37 +154,5 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/org/tempuri"/>
         <delete dir="${build.generated.dir}/jax-wsCache/Usuario"/>
     </target>
-    <target name="wsimport-client-Turno" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/Turno"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Turno" destdir="${build.generated.dir}/jax-wsCache/Turno" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Turno/wsdl/localhost_50114/Turno.svc.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:50114/Turno.svc" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Turno/wsdl/localhost_50114/Turno.svc.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/Turno"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/Turno">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-Turno" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/org/tempuri"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/Turno"/>
-    </target>
-    <target name="wsimport-client-Tipo_Usuario" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/Tipo_Usuario"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Tipo_Usuario" destdir="${build.generated.dir}/jax-wsCache/Tipo_Usuario" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Tipo_Usuario/wsdl/localhost_50114/Tipo_Usuario.svc.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:50114/Tipo_Usuario.svc" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Tipo_Usuario/wsdl/localhost_50114/Tipo_Usuario.svc.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/Tipo_Usuario"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/Tipo_Usuario">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-Tipo_Usuario" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/org/tempuri"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/Tipo_Usuario"/>
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-Cargo, wsimport-client-Comensal, wsimport-client-Empleado, wsimport-client-Servicio, wsimport-client-ServiciosBase, wsimport-client-Usuario, wsimport-client-Turno, wsimport-client-Tipo_Usuario"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-Cargo, wsimport-client-Comensal, wsimport-client-Empleado, wsimport-client-Servicio, wsimport-client-ServiciosBase, wsimport-client-Tipo_Usuario, wsimport-client-Turno, wsimport-client-Usuario"/>
 </project>

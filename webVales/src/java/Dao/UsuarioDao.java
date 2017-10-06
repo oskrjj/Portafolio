@@ -5,7 +5,7 @@
  */
 package Dao;
 
-import org.datacontract.schemas._2004._07.sistemavales.Usuario;
+
 
 /**
  *
@@ -60,19 +60,22 @@ public class UsuarioDao {
         UsuarioDao dao = new UsuarioDao();
         return dao.recuperarIdTipoUsuario(rut);
     }
-    
+
     private static Boolean validarLogin(java.lang.String rut, java.lang.String password) {
         org.tempuri.Usuario service = new org.tempuri.Usuario();
         org.tempuri.IUsuario port = service.getBasicHttpBindingIUsuario();
         return port.validarLogin(rut, password);
     }
-    
-
 
     private static String recuperarIdTipoUsuario(java.lang.String rut) {
         org.tempuri.Usuario service = new org.tempuri.Usuario();
         org.tempuri.IUsuario port = service.getBasicHttpBindingIUsuario();
         return port.recuperarIdTipoUsuario(rut);
     }
+
+    
+
+
+   
     
 }

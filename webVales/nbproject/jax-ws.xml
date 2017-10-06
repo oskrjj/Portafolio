@@ -163,9 +163,9 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="Usuario">
-      <wsdl-url>http://localhost:50114/Usuario.svc?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_50114/Usuario.svc.wsdl</local-wsdl-file>
+    <client name="Tipo_Usuario">
+      <wsdl-url>http://localhost:50114/Tipo_Usuario.svc?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_50114/Tipo_Usuario.svc.wsdl</local-wsdl-file>
       <package-name>org.tempuri</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -183,7 +183,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:50114/Usuario.svc?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:50114/Tipo_Usuario.svc?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -215,7 +215,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:50114/Turno.svc</wsimport-option-value>
+          <wsimport-option-value>http://localhost:50114/Turno.svc?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -227,9 +227,9 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="Tipo_Usuario">
-      <wsdl-url>http://localhost:50114/Tipo_Usuario.svc?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_50114/Tipo_Usuario.svc.wsdl</local-wsdl-file>
+    <client name="Usuario">
+      <wsdl-url>http://localhost:50114/Usuario.svc?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_50114/Usuario.svc.wsdl</local-wsdl-file>
       <package-name>org.tempuri</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -247,7 +247,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:50114/Tipo_Usuario.svc</wsimport-option-value>
+          <wsimport-option-value>http://localhost:50114/Usuario.svc?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

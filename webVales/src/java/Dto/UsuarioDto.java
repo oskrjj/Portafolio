@@ -8,7 +8,7 @@ package Dto;
 
 
 import Dao.UsuarioDao;
-import org.datacontract.schemas._2004._07.sistemavales.Usuario;
+
 public class UsuarioDto {
     private String password;
     private String rut;

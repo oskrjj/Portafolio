@@ -5,6 +5,7 @@
  */
 package Servlet;
 
+import Dto.ServicioDto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,16 +13,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Dao.*;
-import Dto.*;
-import javax.servlet.RequestDispatcher;
 
 /**
  *
- * @author Yojhan Leiva
+ * @author Oskll
  */
-@WebServlet(name = "ServEmpleado", urlPatterns = {"/ServEmpleado"})
-public class ServEmpleado extends HttpServlet {
+@WebServlet(name = "ServicioNuevo", urlPatterns = {"/ServicioNuevo"})
+public class ServicioNuevo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,18 +33,17 @@ public class ServEmpleado extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher dispatcher;
         try (PrintWriter out = response.getWriter()) {
-            
+            ServicioDto dto = new ServicioDto();
+            dto.setServicioId(request.getParameter("idServicio".trim()));
+            dto.setDesc(request.getParameter("descriocionServicio".trim()));
+            if (dto.agregarServicioNuevo(dto)) {
+                request.setAttribute("mensaje", "Agrego Correctamente Nuevo Servicio");
+            }else{
+                request.setAttribute("mensaje", "Error al Agregar Nuevo Servicio");
+            }
+            request.getRequestDispatcher("/paginas/Servicio.jsp").forward(request, response);
         }
-        
-        
-        
-
-        
-        
-        
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

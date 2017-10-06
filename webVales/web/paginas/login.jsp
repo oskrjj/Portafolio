@@ -41,7 +41,7 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                    <input id="password" type="password" class="form-control" name="txtPassword" placeholder="Password">
                 </div>
                 <input class="btn btn-danger" type="submit" value="Entrar"/>
 

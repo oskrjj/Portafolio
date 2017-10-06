@@ -54,10 +54,10 @@
 
 
             <div id="adminPersonal" class="divMenu">
-                <a href="adminUsuarios.jsp" type="button" class="btn btn-warning btn-lg btn-block">Admistrar Usuarios</a>
+                <a href="/WebVales/paginas/adminUsuarios.jsp" type="button" class="btn btn-warning btn-lg btn-block">Admistrar Usuarios</a>
             </div>
             <div id="adminVales" class="divMenu">
-                <a href="adminVales.jsp"type="button" class="btn btn-warning btn-lg btn-block">Admistrar Vales</a>
+                <a href="/WebVales/paginas/adminVales.jsp"type="button" class="btn btn-warning btn-lg btn-block">Admistrar Vales</a>
             </div>
             <!--  <div id="adminMenu" class="divMenu">
                   <a href=type="button" class="btn btn-warning btn-lg btn-block">Admistrar Menú</a>
