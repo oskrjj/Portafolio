@@ -9,12 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../js/ListarCargos.js"/>
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/estilo.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+        
         <title>JSP Administracion de usuarios</title>
     </head>
     <body>
@@ -107,7 +108,20 @@
                         </div>
                         <div class="form-group">
                             <label class="text-info" for="inputApel">Cargo</label>
-                            <input type="text" class="form-control" id="txtCargo" placeholder="Cargo">
+                            <select name="ddl_cargo" class="select2" data-allow-clear="true" data-placeholder="" id="ddl_cargo" style="display: block;
+                                width: 100%;
+                                height: 34px;
+                                padding: 6px 12px;
+                                font-size: 14px;
+                                line-height: 1.42857143;
+                                color: #555;
+                                background-color: #fff;
+                                background-image: none;
+                                border: 1px solid #ccc;
+                                border-radius: 4px;">
+                                <option value=""> -- Seleccione Cargo -- </option>
+                                                            
+                            </select>
                         </div>
                         <div class="from-group">
                             <label class="text-info" for="inputApel" >Email</label>
@@ -160,6 +174,8 @@
             }
         });
     });
+    
+  
     </script>
     </body>
 </html>

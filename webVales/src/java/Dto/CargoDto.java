@@ -67,6 +67,10 @@ public class CargoDto {
         CargoDao cargodao = new CargoDao();
         return cargodao.listarId(id);
     }
+    public String ListarCargo(){
+        CargoDao cargodao = new CargoDao();
+        return cargodao.Listar();
+    }
             
     
     
