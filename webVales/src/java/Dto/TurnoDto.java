@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Dto;
+import Dao.TurnoDao;
 
 /**
  *
@@ -54,5 +55,13 @@ public class TurnoDto {
         this.horaFinal = horaFinal;
     }
     
-    
+    public static String listarTurnos(){
+        TurnoDao dao = new TurnoDao();
+        return dao.listaTurnos();
+    }
+    public static String listaTurnoId(String id){
+        TurnoDao dao = new TurnoDao();
+        return dao.listaTurnosID(id);
+            
+    }
 }
