@@ -29,4 +29,7 @@
     <system systemId="http://localhost:50114/Tipo_Usuario.svc?wsdl" uri="wsdl/localhost_50114/Tipo_Usuario.svc.wsdl"/>
     <system systemId="http://localhost:50114/Tipo_Usuario.svc?xsd=xsd0" uri="wsdl/localhost_50114/Tipo_Usuario.svc.xsd_xsd0.xsd"/>
     <system systemId="http://localhost:50114/Tipo_Usuario.svc?xsd=xsd1" uri="wsdl/localhost_50114/Tipo_Usuario.svc.xsd_xsd1.xsd"/>
+    <system systemId="http://localhost:50114/EndService.svc?wsdl" uri="wsdl/localhost_50114/EndService.svc.wsdl"/>
+    <system systemId="http://localhost:50114/EndService.svc?xsd=xsd0" uri="wsdl/localhost_50114/EndService.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://localhost:50114/EndService.svc?xsd=xsd1" uri="wsdl/localhost_50114/EndService.svc.xsd_xsd1.xsd"/>
 </catalog>

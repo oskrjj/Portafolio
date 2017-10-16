@@ -62,16 +62,14 @@ public class CargoDto {
         CargoDao cargodao = new CargoDao();
         return cargodao.modCargo(id, desc, valor);
     }
-    
-    public String listarCargoId(String id){
-        CargoDao cargodao = new CargoDao();
-        return cargodao.listarId(id);
-    }
     public String ListarCargo(){
         CargoDao cargodao = new CargoDao();
         return cargodao.Listar();
     }
-            
+    public int obtenerValor(String rut){
+        CargoDao cargodao = new CargoDao();
+        return cargodao.obtenerValor(rut);
+    }
     
     
     

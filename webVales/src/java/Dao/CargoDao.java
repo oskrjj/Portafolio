@@ -48,74 +48,66 @@ public class CargoDao {
     }
     
     public boolean insertarCargo(String id, String desc, int valor){
-        CargoDao cargoDao= new CargoDao();
-        return cargoDao.agregarCargo(id, desc, valor);
+        return CargoDao.agregarCargo(id, desccripcion, valor);
     }
     
     public boolean elimCargo(String id){
-        CargoDao cargoDao= new CargoDao();
-        return cargoDao.eliminarCargo(id);
+        return CargoDao.eliminarCargo(id);
     }
     
     public boolean modCargo(String id, String desc, int valor){
-        CargoDao cargoDao = new CargoDao();
-        return cargoDao.modificarCargo(id,desc,valor);
+        return CargoDao.modificarCargo(id, desccripcion, valor);
     }
     public String Listar(){
-        CargoDao cargoDao = new CargoDao();
-        return cargoDao.listarCargos();
+        return CargoDao.listarCargos();
     }
     
     public String obtenerDescId(String id){
-        CargoDao cargoDao = new CargoDao();
-        return cargoDao.obtenerDescripcionId(id);
+        return CargoDao.obtenerDescripcionId(id);
     }
     
-    public String listarId(String id){
-        CargoDao cargoDao = new CargoDao();
-        return cargoDao.listarCargoID(id);
+    public int obtenerValor(String rut){
+        return CargoDao.obtenerValorId(rut);
     }
-
+    
     private static Boolean agregarCargo(java.lang.String id, java.lang.String descripcion, java.lang.Integer valor) {
-        org.tempuri.Cargo service = new org.tempuri.Cargo();
-        org.tempuri.ICargo port = service.getBasicHttpBindingICargo();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.agregarCargo(id, descripcion, valor);
     }
 
     private static Boolean eliminarCargo(java.lang.String id) {
-        org.tempuri.Cargo service = new org.tempuri.Cargo();
-        org.tempuri.ICargo port = service.getBasicHttpBindingICargo();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.eliminarCargo(id);
     }
 
     private static Boolean modificarCargo(java.lang.String id, java.lang.String descripcion, java.lang.Integer valor) {
-        org.tempuri.Cargo service = new org.tempuri.Cargo();
-        org.tempuri.ICargo port = service.getBasicHttpBindingICargo();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.modificarCargo(id, descripcion, valor);
     }
 
-    private static String listarCargoID(java.lang.String id) {
-        org.tempuri.Cargo service = new org.tempuri.Cargo();
-        org.tempuri.ICargo port = service.getBasicHttpBindingICargo();
-        return port.listarCargoID(id);
+  
+
+  
+
+    private static Integer obtenerValorId(java.lang.String id) {
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
+        return port.obtenerValorId(id);
     }
 
     private static String listarCargos() {
-        org.tempuri.Cargo service = new org.tempuri.Cargo();
-        org.tempuri.ICargo port = service.getBasicHttpBindingICargo();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.listarCargos();
     }
 
     private static String obtenerDescripcionId(java.lang.String id) {
-        org.tempuri.Cargo service = new org.tempuri.Cargo();
-        org.tempuri.ICargo port = service.getBasicHttpBindingICargo();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.obtenerDescripcionId(id);
-    }
-
-    private static Integer obtenerValorId(java.lang.String id) {
-        org.tempuri.Cargo service = new org.tempuri.Cargo();
-        org.tempuri.ICargo port = service.getBasicHttpBindingICargo();
-        return port.obtenerValorId(id);
     }
 
 

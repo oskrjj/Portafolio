@@ -16,7 +16,7 @@ public class UsuarioDao {
     private String password;
     private String rut;
     private String tipo_usuario_id;
-    private int id_comensal;
+    private String id_comensal;
 
     public String getPassword() {
         return password;
@@ -42,36 +42,58 @@ public class UsuarioDao {
         this.tipo_usuario_id = tipo_usuario_id;
     }
 
-    public int getId_comensal() {
+    public String getId_comensal() {
         return id_comensal;
     }
 
-    public void setId_comensal(int id_comensal) {
+    public void setId_comensal(String id_comensal) {
         this.id_comensal = id_comensal;
     }
     
     
-    public static  boolean ValidarLog(String rut, String pass){
-        UsuarioDao dao = new UsuarioDao();
-        return dao.validarLogin(rut,pass);
+    public   boolean ValidarLog(String rut, String pass){
+        return UsuarioDao.validarLogin(rut, pass);
     }
     
-    public static String ObtenerTipoUser(String rut){
-        UsuarioDao dao = new UsuarioDao();
-        return dao.recuperarIdTipoUsuario(rut);
+    public  String ObtenerTipoUser(String rut){
+        return UsuarioDao.recuperarIdTipoUsuario(rut);
+    }
+    
+    public  boolean insertarUser(String rut, String pass, String tipo, String comensal){
+        return UsuarioDao.agregarUsuario(rut, pass, tipo, comensal);
+    }
+    
+    public static boolean elimUser(String rut){
+        return UsuarioDao.elimUser(rut);
     }
 
     private static Boolean validarLogin(java.lang.String rut, java.lang.String password) {
-        org.tempuri.Usuario service = new org.tempuri.Usuario();
-        org.tempuri.IUsuario port = service.getBasicHttpBindingIUsuario();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.validarLogin(rut, password);
     }
 
     private static String recuperarIdTipoUsuario(java.lang.String rut) {
-        org.tempuri.Usuario service = new org.tempuri.Usuario();
-        org.tempuri.IUsuario port = service.getBasicHttpBindingIUsuario();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.recuperarIdTipoUsuario(rut);
     }
+
+   
+
+    private static Boolean eliminarUsuario(java.lang.String rut) {
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
+        return port.eliminarUsuario(rut);
+    }
+
+    private static Boolean agregarUsuario(java.lang.String rut, java.lang.String pass, java.lang.String tipo, java.lang.String id) {
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
+        return port.agregarUsuario(rut, pass, tipo, id);
+    }
+
+  
 
     
 

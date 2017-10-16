@@ -11,20 +11,20 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import javax.servlet.RequestDispatcher;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Oskll
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
-public class Login extends HttpServlet {
+@WebServlet(name = "NuevoUser", urlPatterns = {"/NuevoUser"})
+public class NuevoUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -50,44 +50,34 @@ public class Login extends HttpServlet {
         return hexdigest.toString();
     }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        RequestDispatcher dispatcher;
+            throws ServletException, IOException, NoSuchAlgorithmException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String rut = request.getParameter("txtRutUsuario".trim());
-            String clave = request.getParameter("txtPassword".trim());
-            HttpSession sesionRut = request.getSession();
-            HttpSession sesionNombre = request.getSession();
-            
+            String pass1 = request.getParameter("txtPassword".trim());
+            String pass2 = request.getParameter("txtPassword2".trim());
+            String nombre = request.getParameter("txtNombre".trim());
+            String rut = request.getParameter("txtRut".trim());
+            String correo = request.getParameter("txtCorreo".trim());
+            String tipouser = request.getParameter("ddl_tipo");
+            String turno = request.getParameter("ddl_turno");
+            String cargo = request.getParameter("ddl_cargo");
+            String comensal = request.getParameter("ddl_comensal");
             UsuarioDto dtouser = new UsuarioDto();
-            if(rut == " " || clave == " "){
-                request.setAttribute("mensaje", "error Rut o Clave Invalidos");
-            }
-            if (dtouser.ValidarLog(rut,Login.Encriptar(clave))) {
-                
-                request.setAttribute("mensaje", "Validado Correctamente");
-                String tipoUser = dtouser.obtenerTipoId(rut);
-                if (tipoUser.equals("1")) {
-                    
-                    sesionRut.setAttribute("sesionRut", rut);
-                 //   response.sendRedirect("/paginas/adminHome.jsp");
-                    request.getRequestDispatcher("/paginas/adminHome.jsp").forward(request, response);
-                }else{
-                    sesionRut.setAttribute("sesionRut", rut);
-                    request.getRequestDispatcher("/paginas/UserHome.jsp").forward(request, response);
+            EmpleadoDto dtoemp = new EmpleadoDto();
+            if (pass1.equals(pass2)) {
+                if (dtouser.insertarUser(rut, NuevoUser.Encriptar(pass2), tipouser, comensal)) {
+                    if (dtoemp.agregarEmp(rut, nombre, correo, cargo, turno)) {
+                        request.setAttribute("mensaje", "Usuario Agregado Correctamente");
+                    }          
                 }
             }else{
-                request.setAttribute("mensaje", "Error usuario");
+                request.setAttribute("mensaje", "Contraseñas No Coinciden");
             }
-            
-        }catch (Exception e) { 
-            e.printStackTrace();
-        }  
+             
+           
+             request.getRequestDispatcher("/paginas/adminUsuarios.jsp").forward(request, response);
+        }
     }
-    
-   
-    
-   
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -101,7 +91,11 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(NuevoUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -115,7 +109,11 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(NuevoUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

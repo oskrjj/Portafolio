@@ -28,7 +28,7 @@
         <div style="text-align:center;"class=" container boxlogin" text->
             <div class="row"
              <div id="tituloAdmin">
-                 <h1 style="text-align:center;" class="text-success "><Strong>Bienvenido</Strong></h1>  
+                 <h1 style="text-align:center;" class="text-lowercase "><Strong>Bienvenido</Strong></h1>  
                 </div> 
             <form action="/WebVales/Login" method="POST">
                
@@ -41,12 +41,12 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="txtPassword" placeholder="Password">
+                    <input id="password" type="password" class="form-control" required="password" name="txtPassword" placeholder="Password">
                 </div>
                 <input class="btn btn-danger" type="submit" value="Entrar"/>
 
             </form>
-            <a id="link" href="">¿Recuperar contraseña?</a>
+           <!-- <a id="link" href="">¿Recuperar contraseña?</a> -->
 
             </div>
         </div>

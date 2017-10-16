@@ -34,15 +34,16 @@ public class ServicioNuevo extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            ServicioDto dto = new ServicioDto();
-            dto.setServicioId(request.getParameter("idServicio".trim()));
-            dto.setDesc(request.getParameter("descriocionServicio".trim()));
-            if (dto.agregarServicioNuevo(dto)) {
+            String idserv = request.getParameter("idServicio".trim());
+            String descripcionS = request.getParameter("descripcionServicio".trim());
+            ServicioDto servicedto = new ServicioDto();
+            System.out.println("ása");
+            if (servicedto.agregarServicioNuevo(idserv, descripcionS)) {
                 request.setAttribute("mensaje", "Agrego Correctamente Nuevo Servicio");
             }else{
                 request.setAttribute("mensaje", "Error al Agregar Nuevo Servicio");
             }
-            request.getRequestDispatcher("/paginas/Servicio.jsp").forward(request, response);
+            request.getRequestDispatcher("/paginas/adminServicios.jsp").forward(request, response);
         }
     }
 

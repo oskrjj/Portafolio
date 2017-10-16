@@ -36,12 +36,10 @@ public class ServicioDto {
         this.desc = desc;
     }
     
-    public boolean agregarServicioNuevo(ServicioDto servicioN)
+    public boolean agregarServicioNuevo(String id, String desc)
     {
         ServicioDao dao = new ServicioDao();
-        dao.setIdServicio(servicioN.getServicioId());
-        dao.setDescripcion(servicioN.getDesc());
-        return dao.agregarServ(dao);
+        return dao.AgregarServicio(id,desc);
     }
     
 }

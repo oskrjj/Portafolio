@@ -72,86 +72,97 @@ public class EmpleadoDao {
         this.turno_id = turno_id;
     }
 
-    
+   public String obtenerCargoid(String rut){
+       return EmpleadoDao.obtenerCargoId(rut);
+   }
    public boolean ingresarEmpleado(String rut, String nomc, String correo, String cargoId, String turnoId){
-       EmpleadoDao empDao = new EmpleadoDao();
-       return empDao.agregarEmpleado(rut, nomc, correo, cargoId, turnoId);
+       return EmpleadoDao.agregarEmpleado(rut, nomc, correo, cargoId, turnoId);
    }
    
    public boolean elimEmpleado(String rut){
-       EmpleadoDao empDao = new EmpleadoDao();
-       return empDao.eliminarEmpleado(rut);
+       return EmpleadoDao.eliminarEmpleado(rut);
    }
    
    public String listarRut(String rut){
-       EmpleadoDao empDao = new EmpleadoDao();
-       return empDao.listarEmpleadoPorRut(rut);
+       return EmpleadoDao.listarEmpleadoPorRut(rut);
    }
    
    public String listaEmpleados(){
-       EmpleadoDao empDao = new EmpleadoDao();
-       return empDao.listarEmpleados();
+       return EmpleadoDao.listarEmpleados();
    }
    
    public boolean modificarEmpleados(String rut, String nomc, String correo, String cargoId, String turnoId){
-       EmpleadoDao empDao = new EmpleadoDao();
-       return empDao.modificarEmpleado(rut, nomc, correo, cargoId, turnoId);
+       return EmpleadoDao.modificarEmpleado(rut, nomc, correo, cargoId, turnoId);
    }
    
    
    public String obtenerCargosId(String rut){
-       EmpleadoDao empDao = new EmpleadoDao();
-       return empDao.obtenerCargoId(rut);
+       return EmpleadoDao.obtenerCargoId(rut);
    }
+   
+   public String ObtenerTurno(String rut){
+       return EmpleadoDao.obtenerTurno(rut);
+   }
+   public String ObtenerNombre(String rut){
+        return EmpleadoDao.obtenerNombreEmpleado(rut);
+    }
+
+    private static String obtenerNombreEmpleado(java.lang.String rut) {
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
+        return port.obtenerNombreEmpleado(rut);
+    }
 
     private static Boolean agregarEmpleado(java.lang.String rut, java.lang.String nomc, java.lang.String correo, java.lang.String cargoid, java.lang.String turnoid) {
-        org.tempuri.Empleado service = new org.tempuri.Empleado();
-        org.tempuri.IEmpleado port = service.getBasicHttpBindingIEmpleado();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.agregarEmpleado(rut, nomc, correo, cargoid, turnoid);
     }
 
     private static Boolean eliminarEmpleado(java.lang.String rut) {
-        org.tempuri.Empleado service = new org.tempuri.Empleado();
-        org.tempuri.IEmpleado port = service.getBasicHttpBindingIEmpleado();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.eliminarEmpleado(rut);
     }
 
     private static String listarEmpleadoPorRut(java.lang.String rut) {
-        org.tempuri.Empleado service = new org.tempuri.Empleado();
-        org.tempuri.IEmpleado port = service.getBasicHttpBindingIEmpleado();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.listarEmpleadoPorRut(rut);
     }
 
     private static String listarEmpleados() {
-        org.tempuri.Empleado service = new org.tempuri.Empleado();
-        org.tempuri.IEmpleado port = service.getBasicHttpBindingIEmpleado();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.listarEmpleados();
     }
 
     private static Boolean modificarEmpleado(java.lang.String rut, java.lang.String nomc, java.lang.String correo, java.lang.String cargoid, java.lang.String turnoid) {
-        org.tempuri.Empleado service = new org.tempuri.Empleado();
-        org.tempuri.IEmpleado port = service.getBasicHttpBindingIEmpleado();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.modificarEmpleado(rut, nomc, correo, cargoid, turnoid);
     }
 
     private static String obtenerCargoId(java.lang.String rut) {
-        org.tempuri.Empleado service = new org.tempuri.Empleado();
-        org.tempuri.IEmpleado port = service.getBasicHttpBindingIEmpleado();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.obtenerCargoId(rut);
     }
 
-    private static String obtenerNombreEmpleado(java.lang.String rut) {
-        org.tempuri.Empleado service = new org.tempuri.Empleado();
-        org.tempuri.IEmpleado port = service.getBasicHttpBindingIEmpleado();
-        return port.obtenerNombreEmpleado(rut);
-    }
-
     private static String obtenerTurno(java.lang.String rut) {
-        org.tempuri.Empleado service = new org.tempuri.Empleado();
-        org.tempuri.IEmpleado port = service.getBasicHttpBindingIEmpleado();
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.obtenerTurno(rut);
     }
+
     
+
+  
+ 
+
+   
+
+ 
     
     
 }

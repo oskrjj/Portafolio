@@ -26,6 +26,15 @@ public class TipoUsuarioDao {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    public String ListarTiposUsuarios(){
+        return TipoUsuarioDao.listarTiposUsuario();
+    }
+    private static String listarTiposUsuario() {
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
+        return port.listarTiposUsuario();
+    }
     
     
     

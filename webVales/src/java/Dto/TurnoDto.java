@@ -57,11 +57,11 @@ public class TurnoDto {
     
     public static String listarTurnos(){
         TurnoDao dao = new TurnoDao();
-        return dao.listaTurnos();
+        return dao.listaDeTurnos();
     }
     public static String listaTurnoId(String id){
         TurnoDao dao = new TurnoDao();
-        return dao.listaTurnosID(id);
+        return dao.listaTurnosId(id);
             
     }
 }

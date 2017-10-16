@@ -56,22 +56,32 @@ public class EmpleadoDto {
                 nombre + ", correo=" + correo + ", cargo_id=" + cargo_id +
                 ", turno_id=" + turno_id + '}';
     }
-    
+    public String ObtenerNombre(String rut){
+        EmpleadoDao empdao = new EmpleadoDao();
+        return empdao.ObtenerNombre(rut);
+    }
     public boolean agregarEmp(String rut, String nomc, String correo, String cargoId, String turnoId){
         EmpleadoDao empDao = new EmpleadoDao();
         return empDao.ingresarEmpleado(rut, nomc, correo, cargoId, turnoId);
     }
     
-    public static boolean elimEmp(String rut){
+    public  boolean elimEmp(String rut){
         EmpleadoDao empDao = new EmpleadoDao();
         return empDao.elimEmpleado(rut);
         
     }
-    
+    public String obtenerCargoID(String rut){
+        EmpleadoDao empdao = new EmpleadoDao();
+        return empdao.obtenerCargoid(rut);
+    }
     public boolean modEmp(String rut, String nomc, String correo, String cargoId, String turnoId){
         EmpleadoDao empDao = new EmpleadoDao();
         return empDao.modificarEmpleados(rut, nomc, correo, cargoId, turnoId);
     }
     
+    public String obtenerTurno(String rut){
+        EmpleadoDao empdao = new EmpleadoDao();
+        return empdao.ObtenerTurno(rut);
+    }
     
 }

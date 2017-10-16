@@ -38,8 +38,7 @@ public class ListarCargos extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             CargoDto cargo = new CargoDto();
             String json = cargo.ListarCargo();
-            request.setAttribute("Cargos", json);
-            request.getRequestDispatcher("/paginas/adminUsuarios.jsp").forward(request, response);
+            out.print(json);
             
         }
     }

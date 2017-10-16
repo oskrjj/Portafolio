@@ -13,9 +13,9 @@ public class UsuarioDto {
     private String password;
     private String rut;
     private String tipo_usuario_id;
-    private int id_comensal;
+    private String id_comensal;
 
-    public UsuarioDto(String password, String rut, String tipo_usuario_id, int id_comensal) {
+    public UsuarioDto(String password, String rut, String tipo_usuario_id, String id_comensal) {
         this.password = password;
         this.rut = rut;
         this.tipo_usuario_id = tipo_usuario_id;
@@ -24,14 +24,15 @@ public class UsuarioDto {
     }  
 
     public UsuarioDto() {
+        
     }
 
     
-    public int getId_comensal() {
+    public String getId_comensal() {
         return id_comensal;
     }
 
-    public void setId_comensal(int id_comensal) {
+    public void setId_comensal(String id_comensal) {
         this.id_comensal = id_comensal;
     }
 
@@ -66,17 +67,20 @@ public class UsuarioDto {
     }
     
     
-    public static boolean ValidarLog(String rut, String pass){
+    public  static boolean ValidarLog(String rut, String pass){
         
         UsuarioDao userdao = new UsuarioDao();
         return userdao.ValidarLog(rut,pass);
     }
     
-    public static String obtenerTipoId(String rut){
+    public  String obtenerTipoId(String rut){
         UsuarioDao userdao = new UsuarioDao();
         return userdao.ObtenerTipoUser(rut);
     }
-
+    public  boolean insertarUser(String rut, String pass, String tipo, String comensal){
+        UsuarioDao userdao = new UsuarioDao();
+        return userdao.insertarUser(rut, pass, tipo, comensal);
+    }
     
     
 }

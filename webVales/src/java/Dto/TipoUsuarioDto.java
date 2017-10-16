@@ -5,6 +5,8 @@
  */
 package Dto;
 
+import Dao.TipoUsuarioDao;
+
 /**
  *
  * @author Yojhan Leiva
@@ -13,6 +15,9 @@ public class TipoUsuarioDto {
     private int idTipo;
     private String desc;
 
+    public TipoUsuarioDto(){
+        
+    }
     public TipoUsuarioDto(int idTipo, String desc) {
         this.idTipo = idTipo;
         this.desc = desc;
@@ -33,5 +38,9 @@ public class TipoUsuarioDto {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-    
+
+    public String ListarTipoUsuario(){
+        TipoUsuarioDao dao = new TipoUsuarioDao();
+        return dao.ListarTiposUsuarios();
+    }
 }

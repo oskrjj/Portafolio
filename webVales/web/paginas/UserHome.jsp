@@ -3,7 +3,26 @@
     Created on : 28-sep-2017, 20:15:19
     Author     : Malandragem
 --%>
+<%@page import="Dto.UsuarioDto"%>
+<%@page import="Dto.CargoDto"%>
+<%@page import="Dto.EmpleadoDto"%>
+<%
 
+  HttpSession ss = request.getSession();
+  String rut = (String) ss.getAttribute("sesionRut");
+  EmpleadoDto dtoempleado = new EmpleadoDto();
+  CargoDto dtocargo = new CargoDto();
+  UsuarioDto userdto = new UsuarioDto();
+  int valor = dtocargo.obtenerValor(dtoempleado.obtenerCargoID(rut));
+  String turno = dtoempleado.obtenerTurno(rut);
+  String nombre ;
+  nombre = dtoempleado.ObtenerNombre(rut);
+  //String nombre = (String) ss.getAttribute("sesionNombre");
+  ss.setAttribute("rut", rut);
+  
+
+  
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +35,15 @@
         <link rel="stylesheet" href="../css/estilo.css"/>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
- 
+        <title>Administracion Vales|
+            <%
+                if (rut != null) {
+                        out.print(nombre);
+                    }else{
+                    response.sendRedirect("login.jsp");
+                }
+                %>
+        </title>
     
         <style>
            
@@ -34,7 +61,7 @@
                         <a class="navbar-brand" >Servicio de Vales</a>
                     </div> 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="login.jsp"><span class="glyphicon glyphicon-log-out"></span> Cerrar Session</a></li>
+                        <li><a href="/WebVales/paginas/login.jsp"><span class="glyphicon glyphicon-log-out"></span> Cerrar Session</a></li>
                     </ul>
                 </div>
             </nav>
@@ -55,11 +82,62 @@
                     </tr>
        
                     <tr>
-                        <td>    </td>
-                        <td>    </td>
-                        <td>    </td>
-                        <td>    </td>
+                        
+                        <td> <% out.print(rut); %>   </td>
+                        <td> <% out.print(nombre);%>  </td>
+                        <td> <% out.print(valor);%>  </td>
+                        <td> 13/10/2017   </td>
                     </tr>                       
+        </table>
+            </div>
+        </div>  
+         
+        <div class="container">
+            <div class="panel panel-body">
+        <table class="table table-responsive table-bordered">
+                    <tr class="danger">
+                        <th>Turno</th>
+                        <th>Servicios</th>
+                        <th>Seleccione</th>
+                    </tr>
+       
+                   
+                        <%if (turno.equals("1")) {%>
+                            <tr>
+                                <td> Turno 1   </td>
+                                <td> Desayuno 1  </td>
+                                <td><input type="radio" name="servicio" value="servicio" ></td>
+                             </tr>  
+                             <tr>
+                                <td> Turno 1   </td>
+                                <td> Almuerzo   </td>
+                                <td><input type="radio" name="servicio" value="servicio" ></td>
+                             </tr>
+                        <%}%>
+                        <%if (turno.equals("2")) {%>
+                            <tr>
+                                <td> Turno 2   </td>
+                                <td> Cena 1  </td>
+                                <td><input type="radio" name="servicio" value="servicio" ></td>
+                             </tr>  
+                             
+                        <%}%>
+                        <%if (turno.equals("3")) {%>
+                            <tr>
+                                <td> Turno 3   </td>
+                                <td> Cena 2  </td>
+                                <td><input type="radio" name="servicio" value="servicio" ></td>
+                             </tr>  
+                             <tr>
+                                <td> Turno 3   </td>
+                                <td> Desayuno 2   </td>
+                                <td><input type="radio" name="servicio" value="servicio" ></td>
+                             </tr>
+                        <%}%>
+                        
+                        
+                        
+                                        
         </table>
             </div>
         </div>  
