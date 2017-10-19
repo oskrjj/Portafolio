@@ -37,12 +37,14 @@ public class ServicioNuevo extends HttpServlet {
             String idserv = request.getParameter("idServicio".trim());
             String descripcionS = request.getParameter("descripcionServicio".trim());
             ServicioDto servicedto = new ServicioDto();
-            System.out.println("ása");
-            if (servicedto.agregarServicioNuevo(idserv, descripcionS)) {
+            if (!servicedto.getServicioId().equals(idserv)) {
+                if (servicedto.agregarServicioNuevo(idserv, descripcionS)) {
                 request.setAttribute("mensaje", "Agrego Correctamente Nuevo Servicio");
             }else{
                 request.setAttribute("mensaje", "Error al Agregar Nuevo Servicio");
             }
+            }
+            
             request.getRequestDispatcher("/paginas/adminServicios.jsp").forward(request, response);
         }
     }
