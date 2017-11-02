@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Oskll/Desktop/portafolio%20web/WebVale/webVales/web/js/ListaCMB.js</file>
+            <file>file:/C:/Users/Oskll/Desktop/portafolio%20web/WebVale/webVales/src/java/Servlet/ListarEmpleados.java</file>
+            <file>file:/C:/Users/Oskll/Desktop/portafolio%20web/WebVale/webVales/src/java/Dto/EmpleadoDto.java</file>
+            <file>file:/C:/Users/Oskll/Desktop/portafolio%20web/WebVale/webVales/src/java/Dao/EmpleadoDao.java</file>
             <file>file:/C:/Users/Oskll/Desktop/portafolio%20web/WebVale/webVales/web/paginas/adminUsuarios.jsp</file>
-            <file>file:/C:/Users/Oskll/Desktop/portafolio%20web/WebVale/webVales/src/java/Servlet/ListarCargos.java</file>
-            <file>file:/C:/Users/Oskll/Desktop/portafolio%20web/WebVale/webVales/src/java/Servlet/ListarTipoUsuario.java</file>
-            <file>file:/C:/Users/Oskll/Desktop/portafolio%20web/WebVale/webVales/web/js/ListarTipoUsuario.js</file>
+            <file>file:/C:/Users/Oskll/Desktop/portafolio%20web/WebVale/webVales/src/java/Servlet/ListarComensales.java</file>
         </group>
     </open-files>
 </project-private>

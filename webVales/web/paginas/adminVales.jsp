@@ -28,6 +28,9 @@
         <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="../css/bootstrap.css"/>
         <link rel="stylesheet" href="../css/estilo.css"/>
+        <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
+
+        <script src="../js/listarVales.js"> </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script>
@@ -74,31 +77,19 @@
                     <div id="listaServicios" class="tab-pane fade in active">
                         <Strong>Lista de Servicios</strong>
                         <div class="container">
-                            <div class="panel panel-body">
-                                <table class="table table-responsive table-bordered">
+                            <div class="panel panel-body" >
+                                <table class="table table-responsive table-bordered" id="TablaTickets">
                                     <tr class="danger">
                                         <th>ID Vale</th>
                                         <th>Rut Empleado</th>
                                         <th>Nombre Empleado</th>
-                                        <th>Fecha    </th>
-                                        <th>ID Turno</th>
+                                        <th>Hora    </th>
+                                        <th>Turno</th>
                                         <th>Valor</th>
-                                        <th>ID Servicio</th>
+                                        <th>Fecha Emision</th>
+                                        <th>Seleccione</th>
 
-
-                                    </tr>
-                                    <tr>
-
-                                        <td>    </td>
-                                        <td>    </td>
-                                        <td>    </td>
-                                        <td>    </td>
-                                        <td>    </td>
-                                        <td>    </td>
-                                        <td>    </td>
-
-
-                                    </tr>                       
+                                    </tr>                     
                                 </table>
                             </div>
                         </div>  

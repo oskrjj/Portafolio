@@ -23,6 +23,10 @@ public class TurnoDto {
         this.horaFinal = horaFinal;
     }
 
+    public TurnoDto() {
+
+    }
+
     public String getIdTurno() {
         return idTurno;
     }
@@ -55,11 +59,11 @@ public class TurnoDto {
         this.horaFinal = horaFinal;
     }
     
-    public static String listarTurnos(){
+    public  String listarTurnos(){
         TurnoDao dao = new TurnoDao();
         return dao.listaDeTurnos();
     }
-    public static String listaTurnoId(String id){
+    public  String listaTurnoId(String id){
         TurnoDao dao = new TurnoDao();
         return dao.listaTurnosId(id);
             

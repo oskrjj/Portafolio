@@ -42,12 +42,12 @@
 
         <style>
 
-            body {background-color:  #000\9;}
+           
             h1   {color: buttonface;}
 
         </style>
         <title>
-            Administracion Vales|
+            Administracion Usuarios
             <%
                 if (rut != null) {
                         out.print(nombre);
@@ -82,8 +82,8 @@
     </div>
 </head>
 <div id="tituloAdmin">
-    <h1 style="text-align:center;">Menu Administrador</h1>  
-</div> 
+    <h1 style="text-align:center; color:#ac2925 ">Menu Administrador</h1>  
+</div>  
 <body>
 
     <div class="container" >
@@ -91,19 +91,23 @@
 
 
             <div id="adminPersonal" class="divMenu">
-             <a href="/WebVales/paginas/adminUsuarios.jsp" type="button" class="btn btn-warning btn-lg btn-block">Admistrar Usuarios</a>
+             <a href="/WebVales/paginas/adminUsuarios.jsp" type="button" 
+                class="btn btn-warning btn-lg btn-block">Admistrar Usuarios</a>
 
             </div>
             <div id="adminServicios" class="divMenu">
-                <a href="/WebVales/paginas/adminServicios.jsp"type="button" class="btn btn-warning btn-lg btn-block">Administrar Servicios</a>
+                <a href="/WebVales/paginas/adminServicios.jsp"type="button"
+                   class="btn btn-warning btn-lg btn-block">Administrar Servicios</a>
 
             </div>
             <div id="adminVales" class="divMenu">
 
-                <a href="/WebVales/paginas/adminVales.jsp"type="button" class="btn btn-warning btn-lg btn-block">Admistrar Vales</a>
+                <a href="/WebVales/paginas/adminVales.jsp"type="button" 
+                   class="btn btn-warning btn-lg btn-block">Admistrar Vales</a>
             </div>
             <div id="adminTurnos" class="divMenu">
-                <a href="adminTurnos.jsp"type="button" class="btn btn-warning btn-lg btn-block">Administrar Turnos</a>
+                <a href="adminTurnos.jsp"type="button" 
+                   class="btn btn-warning btn-lg btn-block">Administrar Turnos</a>
             </div>
         </div>
 

@@ -5,37 +5,20 @@
  */
 package Dto;
 
+import Dao.ValeDao;
+
 /**
  *
  * @author Yojhan Leiva
  */
 public class ValeDto {
-    private String codVale;
     private String empleadoRut;
-    private String nombreUser;
-    private String fecha;
+    private String empleadoNombre;
+    private String hora;
     private String turno;
     private int valorVale;
-    private String servicioId;
-    private String servicioDesc;
 
-    public ValeDto(String codVale, String empleadoRut, String nombreUser, String fecha, String turno, int valorVale, String servicioId, String servicioDesc) {
-        this.codVale = codVale;
-        this.empleadoRut = empleadoRut;
-        this.nombreUser = nombreUser;
-        this.fecha = fecha;
-        this.turno = turno;
-        this.valorVale = valorVale;
-        this.servicioId = servicioId;
-        this.servicioDesc = servicioDesc;
-    }
-
-    public String getCodVale() {
-        return codVale;
-    }
-
-    public void setCodVale(String codVale) {
-        this.codVale = codVale;
+    public ValeDto() {
     }
 
     public String getEmpleadoRut() {
@@ -46,20 +29,20 @@ public class ValeDto {
         this.empleadoRut = empleadoRut;
     }
 
-    public String getNombreUser() {
-        return nombreUser;
+    public String getEmpleadoNombre() {
+        return empleadoNombre;
     }
 
-    public void setNombreUser(String nombreUser) {
-        this.nombreUser = nombreUser;
+    public void setEmpleadoNombre(String empleadoNombre) {
+        this.empleadoNombre = empleadoNombre;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getHora() {
+        return hora;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 
     public String getTurno() {
@@ -78,23 +61,8 @@ public class ValeDto {
         this.valorVale = valorVale;
     }
 
-    public String getServicioId() {
-        return servicioId;
+    public String ListarTicket(){
+        ValeDao daovale = new ValeDao();
+        return daovale.ListarTickets();
     }
-
-    public void setServicioId(String servicioId) {
-        this.servicioId = servicioId;
-    }
-
-    public String getServicioDesc() {
-        return servicioDesc;
-    }
-
-    public void setServicioDesc(String servicioDesc) {
-        this.servicioDesc = servicioDesc;
-    }
-    
-    
-    
-    
 }

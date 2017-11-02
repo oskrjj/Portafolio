@@ -83,5 +83,8 @@ public class EmpleadoDto {
         EmpleadoDao empdao = new EmpleadoDao();
         return empdao.ObtenerTurno(rut);
     }
-    
+    public String ListaEmpleados(){
+        EmpleadoDao empdao = new EmpleadoDao();
+        return empdao.listaEmpleados();
+    }
 }

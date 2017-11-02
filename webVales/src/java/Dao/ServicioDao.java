@@ -37,12 +37,23 @@ public class ServicioDao {
     public boolean AgregarServicio(String id, String descripcion){
         return ServicioDao.agregarServicio(id, descripcion);
     }
+    public String ListarServicios(){
+        return ServicioDao.listarServicio();
+    }
 
     private static Boolean agregarServicio(java.lang.String id, java.lang.String descripcion) {
         org.tempuri.EndService service = new org.tempuri.EndService();
         org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.agregarServicio(id, descripcion);
     }
+
+    private static String listarServicio() {
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
+        return port.listarServicio();
+    }
+
+    
 
  
 

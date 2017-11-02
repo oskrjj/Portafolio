@@ -42,4 +42,8 @@ public class ServicioDto {
         return dao.AgregarServicio(id,desc);
     }
     
+    public String ListarServicios(){
+        ServicioDao dao = new ServicioDao();
+        return dao.ListarServicios();
+    }
 }
