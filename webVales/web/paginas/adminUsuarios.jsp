@@ -16,7 +16,7 @@
   //String nombre = (String) ss.getAttribute("sesionNombre");
   ss.setAttribute("rut", rut);
   
-
+   String Empleados = dto.ListaEmpleados();
   
 %>
 <!DOCTYPE html>
@@ -29,8 +29,9 @@
         <link rel="stylesheet" href="../css/bootstrap.css"/>
         <link rel="stylesheet" href="../css/estilo.css"/>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
-        <script src="../js/ListarCargos.js"> </script>
-        <script src="../js/ListarTipoUsuario.js"></script>
+        <script src="../js/ListaCMB.js"> </script>
+        <script src="../js/listaEmpleados.js"> </script>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <title>Administracion Vales|
@@ -77,19 +78,13 @@
                     <Strong>Lista de Usuario</strong>
                     <div class="container">
                         <div class="panel panel-body">
-                            <table class="table table-responsive table-bordered">
-                                <tr class="danger">
+                            <table class="table table-responsive table-bordered" id="TablaEmpleados">
+                                <tr class="danger" >
                                     <th>Rut</th>
                                     <th>Nombre Usuario</th>
-                                    <th>Cargo</th>
-
-                                </tr>
-                                <tr>
-                                    <td>    </td>
-                                    <td>    </td>
-                                    <td>    </td>
-
-                                </tr>                       
+                                    <th>Correo</th>
+                                    <th>Seleccione</th>
+                                </tr> 
                             </table>
                         </div>
                     </div>  
@@ -177,10 +172,7 @@
                                 border: 1px solid #ccc;
                                 border-radius: 4px;">
                                 <option value=""> -- Seleccione Tipo de Usuario -- </option>
-                                <option value="1"> -- Administrador -- </option>
-                                <option value="2"> -- Empleado -- </option>
-                                <option value=""> -- Secretaria -- </option>
-                                <option value=""> -- Cajero -- </option>
+                                
                         </select>
 
                         </div>
@@ -198,12 +190,8 @@
                                 border: 1px solid #ccc;
                                 border-radius: 4px;">
                                 <option value=""> -- Seleccione Turno Usuario  -- </option>
-                                <option value="1">            -- Turno 1 [08:00/16:00]-- </option>
-                                <option value="2">            -- Turno 2 [16:00/24:00]-- </option>
-                                <option value="3">            -- Turno 3 [24:00/08:00]-- </option>
-                                
-                                                            
-                                                        </select>
+                                                                                        
+                            </select>
 
                         </div>
                         <div class="col-sm-5">
@@ -226,7 +214,7 @@
 
                         </div>
                         <div class="col-sm-5">
-                            <label class="text-info bg-primary" for="inputCorreo" class="col-xs-3">Turno</label>
+                            <label class="text-info bg-primary" for="inputCorreo" class="col-xs-3">Tipo comensal</label>
                                 <select name="ddl_comensal" class="select2" data-allow-clear="true" data-placeholder="" id="ddl_sexo" style="display: block;
                                 width: 100%;
                                 height: 34px;
@@ -239,8 +227,7 @@
                                 border: 1px solid #ccc;
                                 border-radius: 4px;">
                                 <option value=""> -- Seleccione Tipo Comensal  -- </option>
-                                <option value="1">            -- Comensal Normal-- </option>
-                                <option value="2">            -- Comensal Especial-- </option>
+                               
                                 
                                 
                                                             
