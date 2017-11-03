@@ -6,6 +6,7 @@
 <%@page import="Dto.UsuarioDto"%>
 <%@page import="Dto.CargoDto"%>
 <%@page import="Dto.EmpleadoDto"%>
+<%@page import="java.util.Date" %>@
 <%
 
   HttpSession ss = request.getSession();
@@ -22,6 +23,17 @@
   
 
   
+%>
+<%
+    Date fecha = new Date();
+    String sFecha = "";
+    int iEntero = fecha.getDate();
+    sFecha = String.valueOf(iEntero);
+    iEntero=fecha.getMonth();
+    sFecha = sFecha+"/"+String.valueOf(iEntero);
+    iEntero=fecha.getYear()+1900;
+    sFecha=sFecha+"/"+String.valueOf(iEntero);
+    
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -84,9 +96,14 @@
                     <tr>
                         
                         <td> <% out.print(rut); %>   </td>
-                        <td> <% out.print(nombre);%>  </td>
+                        <td><input type="text" hidden="true" name="txtRut" value="<%=rut%>"></td>
+                        <td> <% out.print(nombre); %>  </td>
+                        <td><input type="text" hidden="true" name="txtNombre" value="<%=nombre%>"></td>
                         <td> <% out.print(valor);%>  </td>
-                        <td> 13/10/2017   </td>
+                        <td><input type="text" hidden="true" name="txtValor" value="<%=valor%>"></td>
+                        <td> <% out.print(sFecha);%>  </td>
+                        <td><input type="text" hidden="true" name="txtFecha" value="<%=sFecha%>"></td>
+                        
                     </tr>                       
         </table>
             </div>
@@ -94,6 +111,7 @@
          
         <div class="container">
             <div class="panel panel-body">
+                <form  method="POST" action="ServAdminVale.java" name="formVale">
         <table class="table table-responsive table-bordered">
                     <tr class="danger">
                         <th>Turno</th>
@@ -135,10 +153,9 @@
                              </tr>
                         <%}%>
                         
-                        
-                        
-                                        
+                                                   
         </table>
+       </form>
             </div>
         </div>  
         <center>
