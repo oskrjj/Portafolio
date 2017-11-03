@@ -31,7 +31,12 @@
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="../js/ListaCMB.js"></script>
         <script src="../js/listaEmpleados.js"></script>
+        <link href="../css/vendor/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery.bdt.css" type="text/css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
 
+        <script src="../js/vendor/jquery.sortelements.js" type="text/javascript"></script>
+        <script src="../js/jquery.bdt.min.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <title>Administracion Vales|
@@ -61,7 +66,7 @@
                     <li><a href="/WebVales/paginas/adminHome.jsp">Volver a home</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">     
-                    <li><a href="/WebVales/paginas/login.jsp">
+                    <li><a href="/WebVales/LogOut">
                             <span class="glyphicon glyphicon-log-out"></span>
                             Cerrar Session</a></li>
                 </ul>
@@ -70,13 +75,12 @@
         </nav>
 
         <div class="container">
-
             <div class="tab-content">
                 <div id="listaUsuarios" class="tab-pane fade in active">
                     <Strong>Lista de Usuario</strong>
                     <div class="container">
                         <div class="panel panel-body">
-                            <table class="table table-responsive table-bordered" id="TablaEmpleados">
+                            <table class="table table-hover" id="TablaEmpleados">
                                 <tr class="danger" >
                                     <th>Rut</th>
                                     <th>Nombre Usuario</th>
@@ -94,14 +98,15 @@
                         <button type="submit" class="btn btn-success">Modificar</button>
                         <button type="submit" class="btn btn-danger ">Eliminar</button>
                     </form>
-
                 </div>
+            
 
 
 
                 <!-------------------------------------------------------------------------------------->
-                <div id="agregarUsuario" class="tab-pane fade">
-                    <Strong>Datos Usuarios</Strong>
+                <div id="agregarUsuario" class="Container">
+                    <div class="ventana">
+                         <Strong>Datos Usuarios</Strong>
                     <form action="/WebVales/NuevoUser" method="POST"  >
                         <div class="form-horizontal">
 
@@ -110,25 +115,25 @@
                                 <input type="text" class="form-control" name="txtNombre" placeholder="ej: Bruno Matias Diaz Gomez">
                             </div>
                             <div class="col-sm-10">
-                                <label class="text-info bg-primary"for="inputRut" class="col-xs-3">Rut</label>
+                                <label class="text-info"for="inputRut" class="col-xs-3">Rut</label>
                                 <input type="text" class="form-control" name="txtRut" placeholder="Rut">
                             </div>
                             <div class="col-sm-10">
-                                <label class="text-info bg-primary" for="inputPassword" class="col-xs-3">Contraseña</label>
+                                <label class="text-info" for="inputPassword" class="col-xs-3">Contraseña</label>
                                 <input type="password" class="form-control" name="txtPassword" placeholder="password">
                             </div>
                             <div class="col-sm-10">
-                                <label class="text-info bg-primary" for="inputPassword" class="col-xs-3">Repita Contraseña </label>
+                                <label class="text-info" for="inputPassword" class="col-xs-3">Repita Contraseña </label>
                                 <input type="password" class="form-control" name="txtPassword2" placeholder="password">
                             </div>
                             <div class="col-sm-10">
-                                <label class="text-info bg-primary" for="inputCorreo" class="col-xs-3">Correo</label>
+                                <label class="text-info" for="inputCorreo" class="col-xs-3">Correo</label>
                                 <input type="email" class="form-control" name="txtCorreo" placeholder="Correo">
                             </div>
                         </div>
 
                         <div class="col-sm-5">
-                            <label class="text-info bg-primary" for="inputCorreo" class="col-xs-3">Tipo Usuario</label>
+                            <label class="text-info" for="inputCorreo" class="col-xs-3">Tipo Usuario</label>
                             <select name="ddl_tipo" class="select2" data-allow-clear="true" data-placeholder="" id="ddl_sexo" style="display: block;
                                     width: 100%;
                                     height: 34px;
@@ -146,7 +151,7 @@
 
                         </div>
                         <div class="col-sm-5">
-                            <label class="text-info bg-primary" for="inputCorreo" class="col-xs-3">Turno</label>
+                            <label class="text-info" for="inputCorreo" class="col-xs-3">Turno</label>
                             <select name="ddl_turno" class="select2" data-allow-clear="true" data-placeholder="" id="ddl_sexo" style="display: block;
                                     width: 100%;
                                     height: 34px;
@@ -164,7 +169,7 @@
 
                         </div>
                         <div class="col-sm-5">
-                            <label class="text-info bg-primary" for="inputCorreo" class="col-xs-3">Cargo Empleado</label>
+                            <label class="text-info " for="inputCorreo" class="col-xs-3">Cargo Empleado</label>
                             <select name="ddl_cargo" class="select2" data-allow-clear="true" data-placeholder="" id="ddl_sexo" style="display: block;
                                     width: 100%;
                                     height: 34px;
@@ -183,7 +188,7 @@
 
                         </div>
                         <div class="col-sm-5">
-                            <label class="text-info bg-primary" for="inputCorreo" class="col-xs-3">Tipo comensal</label>
+                            <label class="text-info" for="inputCorreo" class="col-xs-3">Tipo comensal</label>
                             <select name="ddl_comensal" class="select2" data-allow-clear="true" data-placeholder="" id="ddl_sexo" style="display: block;
                                     width: 100%;
                                     height: 34px;
@@ -215,6 +220,7 @@
                         </div>
 
                     </form>
+                    </div>
 
                 </div>
                 <% String mensaje = (String) request.getAttribute("mensaje");
@@ -232,44 +238,8 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script type="text/javascript">
-                    $(document).ready(function () {
-
-                        $("#add").click(function () {
-
-                            var tds = $("#tabla tr:first td").length;
-                                    /
-                var trs=$("#tabla tr").length;
-                            var nuevaFila = "<tr>";
-                            for (var i = 0; i < tds; i++) {
-                                // añadimos las columnas
-                                nuevaFila += "<td>columna " + (i + 1) + " Añadida con jquery</td>";
-                            }
-                            // Añadimos una columna con el numero total de columnas.
-                            // Añadimos uno al total, ya que cuando cargamos los valores para la
-                            // columna, todavia no esta añadida
-                            nuevaFila += "<td>" + (trs + 1) + " columnas";
-                            nuevaFila += "</tr>";
-                            $("#tabla").append(nuevaFila);
-                        });
-
-                        /**
-                         * Funcion para eliminar la ultima columna de la tabla.
-                         */
-                        $("#del").click(function () {
-                            // Obtenemos el total de columnas (tr) del id "tabla"
-                            var trs = $("#tabla tr").length;
-                            if (trs > 1)
-                            {
-                                // Eliminamos la ultima columna
-                                $("#tabla tr:last").remove();
-                            }
-                        });
-                    });
-
-
-        </script>
-
+        
+        
 
 
     </body>

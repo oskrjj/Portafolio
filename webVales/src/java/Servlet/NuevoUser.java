@@ -64,18 +64,20 @@ public class NuevoUser extends HttpServlet {
             String comensal = request.getParameter("ddl_comensal");
             UsuarioDto dtouser = new UsuarioDto();
             EmpleadoDto dtoemp = new EmpleadoDto();
+            out.println("llega");
             if (pass1.equals(pass2)) {
                 if (dtouser.insertarUser(rut, NuevoUser.Encriptar(pass2), tipouser, comensal)) {
                     if (dtoemp.agregarEmp(rut, nombre, correo, cargo, turno)) {
                         request.setAttribute("mensaje", "Usuario Agregado Correctamente");
+                        
+
                     }          
                 }
             }else{
                 request.setAttribute("mensaje", "Contraseñas No Coinciden");
             }
-             
+             request.getRequestDispatcher("/paginas/adminHome.jsp").forward(request, response);
            
-             request.getRequestDispatcher("/paginas/adminUsuarios.jsp").forward(request, response);
         }
     }
 

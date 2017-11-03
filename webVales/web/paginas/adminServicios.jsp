@@ -25,7 +25,9 @@
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/estilo.css"/>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
-
+        <link href="../css/vendor/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery.bdt.css" type="text/css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="../js/listaServicios.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -73,12 +75,11 @@
                     <Strong>Lista de Servicios</strong>
                     <div class="container">
                         <div class="panel panel-body">
-                            <table class="table table-responsive table-bordered" id="TablaServicios">
+                            <table class="table table-hover" id="TablaServicios">
                                 <tr class="danger">
                                     <th>ID Servicio</th>
                                     <th>Descripción</th>
                                     <th>Seleccione</th>
-
                                 </tr>                      
                             </table>
                         </div>
@@ -91,7 +92,6 @@
                         <button type="submit" class="btn btn-success">Modificar</button>
                         <button type="submit" class="btn btn-danger ">Eliminar</button>
                     </form>
-
                 </div>
 
 
