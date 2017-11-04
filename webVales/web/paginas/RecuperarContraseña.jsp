@@ -23,7 +23,7 @@
 
 
         <div style="text-align:center;" class="container  " >
-            <h2 class="lowercase">Ingresa tu correo</h2>
+            <h2 class="danger">Ingresa tu correo</h2>
             <div class="form-group col-md-offset-4 " >
                 <form class="navbar-form navbar-left" role="recuperarC">
                     <div class="input-group" >
