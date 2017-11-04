@@ -34,6 +34,14 @@
 
 
     </head>
+           <title>Administracion Vales|
+            <%                if (rut != null) {
+                    out.print(nombre);
+                } else {
+                    response.sendRedirect("login.jsp");
+                }
+            %>
+        </title>
     <body>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
