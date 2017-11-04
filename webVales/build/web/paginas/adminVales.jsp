@@ -84,7 +84,7 @@
                                         <th>Rut Empleado</th>
                                         <th>Nombre Empleado</th>
                                         <th>Hora    </th>
-                                        <th>Turno</th>
+                                        <th>Servicio</th>
                                         <th>Valor</th>
                                         <th>Fecha Emision</th>
                                         <th>Seleccione</th>

@@ -25,19 +25,14 @@
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/estilo.css"/>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
-
+        <link href="../css/vendor/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery.bdt.css" type="text/css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="../js/listaServicios.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        <title>Administracion Vales|
-            <%                if (rut != null) {
-                    out.print(nombre);
-                } else {
-                    response.sendRedirect("login.jsp");
-                }
-            %>
-        </title>
+
     </head>
     <body>
         <nav class="navbar navbar-default">
@@ -54,8 +49,8 @@
                         %></a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a data-toggle="tab" href="#listaUsuarios">Servicios</a></li>
-                    <li><a data-toggle="tab" href="#agregarUsuario">Agregar servicios</a></li>
+                    <li class="active"><a data-toggle="tab" href="#listaServicios">Servicios</a></li>
+                    <li><a data-toggle="tab" href="#agregarServicios">Agregar servicios</a></li>
                     <li><a href="/WebVales/paginas/adminHome.jsp">Volver a home</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">     
@@ -73,12 +68,11 @@
                     <Strong>Lista de Servicios</strong>
                     <div class="container">
                         <div class="panel panel-body">
-                            <table class="table table-responsive table-bordered" id="TablaServicios">
+                            <table class="table table-hover" id="TablaServicios">
                                 <tr class="danger">
                                     <th>ID Servicio</th>
                                     <th>Descripción</th>
                                     <th>Seleccione</th>
-
                                 </tr>                      
                             </table>
                         </div>
@@ -91,7 +85,6 @@
                         <button type="submit" class="btn btn-success">Modificar</button>
                         <button type="submit" class="btn btn-danger ">Eliminar</button>
                     </form>
-
                 </div>
 
 
@@ -101,15 +94,15 @@
                     <form method="POST" action="/WebVales/ServicioNuevo" >
                         <div style="text-align:center;" class="form-row">
                             <div class="col-sm-10">
-                                <label class="text-info"for="inputDescripcion" >Descripcion servicio</label>
+                                <label class="text-danger"for="inputDescripcion" >Descripcion servicio</label>
                                 <input type="text" class="form-control"name="descripcionServicio" placeholder=" descripcion">
                             </div>
                             <div class="col-sm-10">
-                                <label class="text-info" for="inputIdServicio" class="">ID Servicio</label>
+                                <label class="text-danger" for="inputIdServicio" class="">ID Servicio</label>
                                 <input type="text" class="form-control" name="idServicio" placeholder="ID Servicio">
                             </div>                        
-                            <input type="submit" class="btn btn-success col-sm-10" value="Agregar">
-                            <button type="reset" class="btn btn-danger col-sm-10">Limpiar</button>
+                            <input type="submit" class="btn btn-success col-lg-6 col-lg-offset-2" value="Agregar">
+                            <button type="reset" class="btn btn-danger col-lg-6 col-lg-offset-2">Limpiar</button>
                         </div>
 
                     </form>

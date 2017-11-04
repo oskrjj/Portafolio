@@ -3,10 +3,12 @@
     Created on : 28-sep-2017, 20:15:19
     Author     : Malandragem
 --%>
+<%@page import="java.util.Calendar"%>
 <%@page import="Dto.UsuarioDto"%>
 <%@page import="Dto.CargoDto"%>
 <%@page import="Dto.EmpleadoDto"%>
 <%@page import="java.util.Date" %>@
+<%@page import="java.util.GregorianCalendar" %>
 <%
 
   HttpSession ss = request.getSession();
@@ -25,15 +27,11 @@
   
 %>
 <%
-    Date fecha = new Date();
-    String sFecha = "";
-    int iEntero = fecha.getDate();
-    sFecha = String.valueOf(iEntero);
-    iEntero=fecha.getMonth();
-    sFecha = sFecha+"/"+String.valueOf(iEntero);
-    iEntero=fecha.getYear()+1900;
-    sFecha=sFecha+"/"+String.valueOf(iEntero);
-    
+   Calendar fecha = new GregorianCalendar();
+   int day = fecha.get(Calendar.DATE);
+   int month = fecha.get(Calendar.MONTH)+1;
+   int years = fecha.get(Calendar.YEAR);
+   String date = day + " / " + month + " / " + years; 
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -96,13 +94,13 @@
                     <tr>
                         
                         <td> <% out.print(rut); %>   </td>
-                        <td><input type="text" hidden="true" name="txtRut" value="<%=rut%>"></td>
+                        
                         <td> <% out.print(nombre); %>  </td>
-                        <td><input type="text" hidden="true" name="txtNombre" value="<%=nombre%>"></td>
+                        
                         <td> <% out.print(valor);%>  </td>
-                        <td><input type="text" hidden="true" name="txtValor" value="<%=valor%>"></td>
-                        <td> <% out.print(sFecha);%>  </td>
-                        <td><input type="text" hidden="true" name="txtFecha" value="<%=sFecha%>"></td>
+                        
+                        <td> <% out.print(date);%>  </td>
+                        
                         
                     </tr>                       
         </table>

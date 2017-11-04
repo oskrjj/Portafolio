@@ -11,6 +11,9 @@ $(document).ready(function(){
         }) ;
         $('#TablaEmpleados').append(table);
     }); 
-   
+   $('#TablaEmpleados').bdt({
+                    showSearchForm: 1,
+                    showEntriesPerPageField: 1
+                });
 });  
 

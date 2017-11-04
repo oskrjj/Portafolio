@@ -30,7 +30,7 @@
                  <div id="tituloAdmin">
                     <h1 style="text-align:center;" class="text-danger "><Strong>Bienvenido</Strong></h1>  
                 </div> 
-                <form  method="POST" name="fomr1">
+                <form  action=" " method="POST" name="fomr1">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input id="rutUsuario" type="text" class="form-control" required 
@@ -70,39 +70,7 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
         crossorigin="anonymous"></script>
 
-        <script type="text/javascript">
-
-            var Fn = {
-                validaRut: function (rutCompleto) {
-                    rutCompleto = rutCompleto.replace("‐", "-");
-                    if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rutCompleto))
-                        return false;
-                    var tmp = rutCompleto.split('-');
-                    var digv = tmp[1];
-                    var rut = tmp[0];
-                    if (digv == 'K')
-                        digv = 'k';
-                    return (Fn.dv(rut) == digv);
-                },
-                dv: function (T) {
-                    var M = 0, S = 1;
-                    for (; T; T = Math.floor(T / 10))
-                        S = (S + T % 10 * (9 - M++ % 6)) % 11;
-                    return S ? S - 1 : 'k';
-                }
-            }
-
-            $("#btnEntrarValidacion").click(function () {
-                if (Fn.validaRut($("#rutUsuario").val())) {
-                    // $("#msgerror").html("El rut ingresado es válido");
-                } else {
-                    $("#msgerror").html("El Rut no es válido, vereifique formato rut ");
-                }
-            });
-
-
-        </script>
-
+       
 
 
     </body>
