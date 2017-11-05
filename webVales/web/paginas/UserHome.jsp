@@ -45,7 +45,8 @@
         <link rel="stylesheet" href="../css/estilo.css"/>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <title>Administracion Vales|
+        <title>
+            Administracion Usuario
             <%
                 if (rut != null) {
                         out.print(nombre);
@@ -65,7 +66,7 @@
         </style>
         
         <div id="divcabezera">
-            <nav class="navbar navbar-inverse">
+            <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" >Servicio de Vales</a>
@@ -80,7 +81,7 @@
       
     </head>
     <body>  
-         <h1 style="text-align:center;"><strong>Ticket</strong></h1>  
+         <h1 style="text-align:center;"><strong class="text-danger">Ticket</strong></h1>  
         <div class="container">
             <div class="panel panel-body">
         <table class="table table-responsive table-bordered">

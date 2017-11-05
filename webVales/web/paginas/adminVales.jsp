@@ -29,53 +29,56 @@
         <link rel="stylesheet" href="../css/bootstrap.css"/>
         <link rel="stylesheet" href="../css/estilo.css"/>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
-
         <script src="../js/listarVales.js"> </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <script>
-            
-            </script>
-        <title>Administracion Vales|
-            <%
-                if (rut != null) {
-                        out.print(nombre);
-                    }else{
-                    response.sendRedirect("login.jsp");
-                }
-                %>
-        </title>
+    
     </head>
+    
+    <title>
+        Administracion Vales
+        <%                if (rut != null) {
+                out.print(nombre);
+            } else {
+                response.sendRedirect("login.jsp");
+            }
+        %>
+    </title>
     <body>
-        <div id="divcabezera">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand">
+                        <%
+                        if (nombre != null) { %>
+                        <% out.print(" Bienvenido: " + nombre + ""); %>
+                        <%}
 
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <li class="navbar-brand" >Administrar Vales</li>
-
-                    </div> 
-                    <div class="navbar-header">
-                    <a class="navbar-brand"><%
-                      if (nombre!=null) { %>
-                      <% out.print(" Bienvenido: "+ nombre+""); %>
-                          <%}
- 
-                    %></a>
+                        %></a>
                 </div>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a data-toggle="tab" href="#listadoVales">Vales de Colación</a></li>
-                        <li><a href="adminHome.jsp">Volver a home</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/WebVales/paginas/login.jsp"><span class="glyphicon glyphicon-log-out"></span> Cerrar Session</a></li>
-                    </ul>
-                </div>
-            </nav> 
+                 <ul class="nav navbar-nav" id="menu_gral">
+                    <li><a href="#">    
+                                <span class="glyphicon glyphicon-cutlery">
+                            </span> Información de Vales </a>
+                        <ul>
+                                   <li><a href="/WebVales/paginas/adminHome.jsp">
+                                    <span class="glyphicon glyphicon-home">
+                                    </span>  Volver a home </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">     
+                    <li><a href="/WebVales/paginas/login.jsp">
+                            <span class="glyphicon glyphicon-log-out"></span>
+                            Cerrar Session</a></li>
+                </ul>
+            </div>
+        </nav>
+<!---------------------------------------------------------------------------------------->
             <div class="container">
                 <div class="tab-content">
-                    <div id="listaServicios" class="tab-pane fade in active">
-                        <Strong>Lista de Servicios</strong>
+                    <div id="listaVales" class="tab-pane fade in active">
+                        <Strong class="text-danger">Lista de Servicios</strong>
                         <div class="container">
                             <div class="panel panel-body" >
                                 <table class="table table-responsive table-bordered" id="TablaTickets">

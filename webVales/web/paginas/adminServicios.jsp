@@ -34,45 +34,56 @@
 
 
     </head>
-           <title>Administracion Vales|
-            <%                if (rut != null) {
-                    out.print(nombre);
-                } else {
-                    response.sendRedirect("login.jsp");
-                }
-            %>
-        </title>
+    <title>
+        Administracion Servicios
+        <%                if (rut != null) {
+                out.print(nombre);
+            } else {
+                response.sendRedirect("login.jsp");
+            }
+        %>
+    </title>
+
     <body>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Administracion de Servicios</a>
-                </div>
-                <div class="navbar-header">
-                    <a class="navbar-brand"><%
-                        if (nombre != null) { %>
+                    <a class="navbar-brand">
+                        <%
+                            if (nombre != null) { %>
                         <% out.print(" Bienvenido: " + nombre + ""); %>
                         <%}
 
                         %></a>
                 </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a data-toggle="tab" href="#listaServicios">Servicios</a></li>
-                    <li><a data-toggle="tab" href="#agregarServicios">Agregar servicios</a></li>
-                    <li><a href="/WebVales/paginas/adminHome.jsp">Volver a home</a></li>
+                <ul class="nav navbar-nav" id="menu_gral">
+                    <li><a href="#">    
+                            <span class="glyphicon glyphicon-blackboard">
+                            </span> Opciones Servicios </a>
+                        <ul>
+                            <li class="active"><a data-toggle="tab" href="#listaServicios">
+                                    <span class="glyphicon glyphicon-ok">
+                                    </span> Lista de Servicios  </a></li>
+                            <li><a data-toggle="tab" href="#agregarServicios">
+                                    <span class="glyphicon glyphicon-floppy-open">
+                                    </span> Agregar Servicios   </a></li>
+                            <li><a href="/WebVales/paginas/adminHome.jsp">
+                                    <span class="glyphicon glyphicon-home">
+                                    </span>  Volver a home </a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">     
                     <li><a href="/WebVales/paginas/login.jsp">
                             <span class="glyphicon glyphicon-log-out"></span>
                             Cerrar Session</a></li>
                 </ul>
-
             </div>
         </nav>
-
+        <!------------------------------------------------------------------------------------------------------>
         <div class="container">
             <div class="tab-content">
-                <div id="listaServicios" class="tab-pane fade in active">
+                <div id="listaServicios" class="tab-pane fade in active text-danger">
                     <Strong>Lista de Servicios</strong>
                     <div class="container">
                         <div class="panel panel-body">
@@ -98,26 +109,30 @@
 
                 <!----------------------------------------------------------------------------------------->
                 <div id="agregarServicios" class="tab-pane fade">
-                    <Strong>Datos de Servicios</Strong>
+                    <Strong class="text-danger">Datos de Servicios</Strong>
                     <form method="POST" action="/WebVales/ServicioNuevo" >
-                        <div style="text-align:center;" class="form-row">
+                        <div  class="form-row">
                             <div class="col-sm-10">
-                                <label class="text-danger"for="inputDescripcion" >Descripcion servicio</label>
+                                <label style="color: #ff0"for="inputDescripcion" 
+                                       Descripcion servicio</label>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
                                 <input type="text" class="form-control"name="descripcionServicio" placeholder=" descripcion">
                             </div>
                             <div class="col-sm-10">
-                                <label class="text-danger" for="inputIdServicio" class="">ID Servicio</label>
+                                <label style="color: #ff0"for="inputIdServicio" 
+                                       ID Servicio</label>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
                                 <input type="text" class="form-control" name="idServicio" placeholder="ID Servicio">
                             </div>                        
-                            <input type="submit" class="btn btn-success col-lg-6 col-lg-offset-2" value="Agregar">
-                            <button type="reset" class="btn btn-danger col-lg-6 col-lg-offset-2">Limpiar</button>
+                            <input type="submit" class="btn btn-success col-lg-3 col-lg-offset-2" value="Agregar">
+                            <button type="reset" class="btn btn-danger col-lg-3 col-lg-offset-0">Limpiar</button>
                         </div>
 
                     </form>
                 </div>
 
-                <% String mensajee = (String)request.getAttribute("mensaje");
-                if(mensajee!=null) {%>
+                <% String mensajee = (String) request.getAttribute("mensaje");
+                    if (mensajee != null) {%>
                 <script>
                     alert("<%=mensajee%>");
                 </script>

@@ -1,23 +1,101 @@
 
 
-body {
-    background-image: url("../imagenes/header.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    
-    
+    body {
+        background-image: url("../imagenes/header.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+
     }
+
     label{
-        font-family: Arial;
+        font-family: Tahoma;
         color: #eb9316;
+
     }
- 
+    strong{
+        font-family: Tahoma;
+        font-size: medium;
+
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        border:  none;
+        position: relative;
+    }
+    #menu_gral {
+        font-family: verdana, sans sherif;
+        width: 50%;
+        margin: auto;
+    }
+    #menu_gral ul {
+        list-style-type: none; 
+        text-align: left;
+        font-size: 10rem;
+    }
+    #menu_gral > ul li {
+        display: inline-block;
+        width: 40%;
+        position: relative;
+        background: #FF7361;
+    }
+    #menu_gral li a {
+        font-family: Tahoma;
+        display: block;
+        text-decoration: #8AA9B8;
+        font-size: 1.7rem; /*USUARIO EN GRANDE */
+        line-height: 1rem;  
+        color: #444;
+    }
+    #menu_gral li:hover a, #menu_gral li a:focus {
+        background: #8DA889;
+        color: #fff;
+    }
+
+    #menu_gral li ul {
+        position: absolute;
+        width: 0;
+        overflow: hidden;
+    }
+    #menu_gral li:hover ul, #menu_gral li:focus ul {
+        width: 100%;
+        margin: 0 -4rem -4rem -4rem;
+        padding: 1rem;
+        /* background:  #bbb; */
+        z-index: 5;
+    }
+    #menu_gral li li {
+        display: block;
+        width: 100%;
+
+    }
+    #menu_gral li:hover li a, #menu_gral li:focus li a {
+        font-family: Tahoma;
+        font-size: 1.7rem;
+        line-height: 2rem;
+        background: #444;
+    }
+    #menu_gral li li a:hover, #menu_gral li li a:focus {
+        background: #8AA9B8; 
+    }
+    h1{
+       
+    font-size: 38px;
+    font-style: italic;
+    color: #333;
+    padding: 10px;
+    text-shadow: -1px -1px 0px #101010, 1px 1px 0px #505050;
+  }
+    
 
 
- 
-   
+
+
+
+
+
 
 
 
