@@ -32,7 +32,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        <title>Administracion Vales|
+
+    </head>
+           <title>Administracion Vales|
             <%                if (rut != null) {
                     out.print(nombre);
                 } else {
@@ -40,7 +42,6 @@
                 }
             %>
         </title>
-    </head>
     <body>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -57,6 +58,8 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a data-toggle="tab" href="#listaUsuarios">Servicios</a></li>
+
+                    <li class="active"><a data-toggle="tab" href="#listaServicios">Servicios</a></li>
                     <li><a data-toggle="tab" href="#agregarServicios">Agregar servicios</a></li>
                     <li><a href="/WebVales/paginas/adminHome.jsp">Volver a home</a></li>
                 </ul>

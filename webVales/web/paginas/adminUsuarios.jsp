@@ -38,7 +38,9 @@
        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <title>Administracion Vales|
+
+    </head>
+           <title>Administracion Vales|
             <%                if (rut != null) {
                     out.print(nombre);
                 } else {
@@ -47,7 +49,6 @@
 
             %>
         </title>
-    </head>
     <body>
 
         <nav class="navbar navbar-default">
@@ -127,7 +128,7 @@
                         <div class="form-horizontal">
 
                             <div class="col-sm-10">
-                                <label class="text-info"for="inputNombreCompleto" class="col-xs-3">Nombre completo</label>
+                                <label class="text-danger"for="inputNombreCompleto" class="col-xs-3">Nombre completo</label>
                                 <input type="text" class="form-control" name="txtNombre" placeholder="ej: Bruno Matias Diaz Gomez">
                             </div>
                             <div class="col-sm-10">
@@ -135,21 +136,21 @@
                                 <input type="text" class="form-control" id="rutUserNew" name="txtRut" placeholder="Rut">
                             </div>
                             <div class="col-sm-10">
-                                <label class="text-info" for="inputPassword" class="col-xs-3">Contraseña</label>
+                                <label class="text-danger" for="inputPassword" class="col-xs-3">Contraseña</label>
                                 <input type="password" class="form-control" name="txtPassword" placeholder="password">
                             </div>
                             <div class="col-sm-10">
-                                <label class="text-info" for="inputPassword" class="col-xs-3">Repita Contraseña </label>
+                                <label class="text-danger" for="inputPassword" class="col-xs-3">Repita Contraseña </label>
                                 <input type="password" class="form-control" name="txtPassword2" placeholder="password">
                             </div>
                             <div class="col-sm-10">
-                                <label class="text-info" for="inputCorreo" class="col-xs-3">Correo</label>
+                                <label class="text-danger" for="inputCorreo" class="col-xs-3">Correo</label>
                                 <input type="email" class="form-control" name="txtCorreo" placeholder="Correo">
                             </div>
                         </div>
 
                         <div class="col-sm-5">
-                            <label class="text-info" for="inputCorreo" class="col-xs-3">Tipo Usuario</label>
+                            <label class="text-danger" for="inputCorreo" class="col-xs-3">Tipo Usuario</label>
                             <select name="ddl_tipo" class="select2" data-allow-clear="true" data-placeholder="" id="ddl_sexo" style="display: block;
                                     width: 100%;
                                     height: 34px;
@@ -167,7 +168,7 @@
 
                         </div>
                         <div class="col-sm-5">
-                            <label class="text-info" for="inputCorreo" class="col-xs-3">Turno</label>
+                            <label class="text-danger" for="inputCorreo" class="col-xs-3">Turno</label>
                             <select name="ddl_turno" class="select2" data-allow-clear="true" data-placeholder="" id="ddl_sexo" style="display: block;
                                     width: 100%;
                                     height: 34px;
@@ -185,7 +186,7 @@
 
                         </div>
                         <div class="col-sm-5">
-                            <label class="text-info " for="inputCorreo" class="col-xs-3">Cargo Empleado</label>
+                            <label class="text-danger " for="inputCorreo" class="col-xs-3">Cargo Empleado</label>
                             <select name="ddl_cargo" class="select2" data-allow-clear="true" data-placeholder="" id="ddl_sexo" style="display: block;
                                     width: 100%;
                                     height: 34px;
@@ -204,7 +205,7 @@
 
                         </div>
                         <div class="col-sm-5">
-                            <label class="text-info" for="inputCorreo" class="col-xs-3">Tipo comensal</label>
+                            <label class="text-danger" for="inputCorreo" class="col-xs-3">Tipo comensal</label>
                             <select name="ddl_comensal" class="select2" data-allow-clear="true" data-placeholder="" id="ddl_sexo" style="display: block;
                                     width: 100%;
                                     height: 34px;

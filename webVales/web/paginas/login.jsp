@@ -29,7 +29,7 @@
                  <div id="tituloAdmin">
                     <h1 style="text-align:center;" class="text-danger "><Strong>Bienvenido</Strong></h1>  
                 </div> 
-                <form  action="/WebVales/Login" method="POST" name="fomr1">
+                <form  action=" " method="POST" name="fomr1">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input type="text" id="rutUsuario"  class="form-control" required 
