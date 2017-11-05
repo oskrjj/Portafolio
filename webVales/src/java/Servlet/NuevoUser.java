@@ -64,7 +64,6 @@ public class NuevoUser extends HttpServlet {
             String comensal = request.getParameter("ddl_comensal");
             UsuarioDto dtouser = new UsuarioDto();
             EmpleadoDto dtoemp = new EmpleadoDto();
-            out.println("llega");
             if (pass1.equals(pass2)) {
                 if (dtouser.insertarUser(rut, NuevoUser.Encriptar(pass2), tipouser, comensal)) {
                     if (dtoemp.agregarEmp(rut, nombre, correo, cargo, turno)) {

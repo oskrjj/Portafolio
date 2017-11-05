@@ -10,7 +10,6 @@ $(document).ready(function(){
             table += '<td>'+ticket.Servicio+'</td>';
             table += '<td>'+ticket.Valor+'</td>';
             table += '<td>'+ticket.FechaEmision+'</td>';
-            table += '<td> <input type ="radio" value='+ticket.CodigoVale+'</td>';
             table += '</tr>';
         }) ;
         $('#TablaTickets').append(table);

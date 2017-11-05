@@ -65,7 +65,6 @@ public class Login extends HttpServlet {
             }
             if (dtouser.ValidarLog(rut,Login.Encriptar(clave))) {
                 
-                request.setAttribute("mensaje", "Validado Correctamente");
                 String tipoUser = dtouser.obtenerTipoId(rut);
                 if (tipoUser.equals("1")) {
                     
@@ -74,10 +73,13 @@ public class Login extends HttpServlet {
                     request.getRequestDispatcher("/paginas/adminHome.jsp").forward(request, response);
                 }else{
                     sesionRut.setAttribute("sesionRut", rut);
-                    request.getRequestDispatcher("/paginas/UserHome.jsp").forward(request, response);
+                    response.sendRedirect("/WebVales/paginas/UserHome.jsp");
+                    //request.getRequestDispatcher("/paginas/UserHome.jsp").forward(request, response);
                 }
             }else{
                 request.setAttribute("mensaje", "Error usuario");
+                response.sendRedirect("/WebVales/paginas/login.jsp");
+                request.getRequestDispatcher("/paginas/login.jsp").forward(request, response);
             }
             
         }catch (Exception e) { 

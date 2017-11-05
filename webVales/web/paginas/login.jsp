@@ -18,13 +18,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-
-
+        
         <title>JSP Inicio</title>
     </head>
 
     <body>
-
+        
         <div style="text-align:center;"class=" container boxlogin" text->
             <div class="row"
                  <div id="tituloAdmin">
@@ -33,8 +32,8 @@
                 <form  action="/WebVales/Login" method="POST" name="fomr1">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="rutUsuario" type="text" class="form-control" required 
-                               name="txtRutUsuario" placeholder="Rut: 11111111-1 " >   
+                        <input type="text" id="rutUsuario"  class="form-control" required 
+                               name="txtRutUsuario" placeholder="14.569.484-1 " >   
                     </div>
 
                     <div class="input-group">
@@ -69,9 +68,22 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
         crossorigin="anonymous"></script>
-
+        <script src="../js/jquery-3.2.1.js" type="text/javascript"></script>
+        <script src="../js/jquery.rut.js" type="text/javascript"></script>
+        <script type="text/javascript">
+           $(function() {
+                $("#rutUsuario").rut({formatOn:'keyup'}).on('rutInvalido', function() {
+                    alert("El rut ingresado no es valido");
+                });
+            });
+        </script>
        
-
+<% String mensaje = (String) request.getAttribute("mensaje");
+                    if (mensaje != null) {%>
+                <script>
+                    alert("<%=mensaje%>");
+                </script>
+                <%}%>
 
     </body>
 </html>

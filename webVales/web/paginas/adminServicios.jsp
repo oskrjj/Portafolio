@@ -57,7 +57,7 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a data-toggle="tab" href="#listaUsuarios">Servicios</a></li>
-                    <li><a data-toggle="tab" href="#agregarUsuario">Agregar servicios</a></li>
+                    <li><a data-toggle="tab" href="#agregarServicios">Agregar servicios</a></li>
                     <li><a href="/WebVales/paginas/adminHome.jsp">Volver a home</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">     

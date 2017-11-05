@@ -86,6 +86,9 @@ public class EmpleadoDao {
    public String listarRut(String rut){
        return EmpleadoDao.listarEmpleadoPorRut(rut);
    }
+   public String ListarEmpleadoPorRut(String rut){
+       return EmpleadoDao.listarEmpleadoPorRut(rut);
+   }
    
    public String listaEmpleados(){
        return EmpleadoDao.listarEmpleados();
@@ -154,6 +157,8 @@ public class EmpleadoDao {
         org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.obtenerTurno(rut);
     }
+
+
 
     
 

@@ -35,9 +35,9 @@ public class LogOut extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-               HttpSession  obsSession = request.getSession();
-                obsSession.invalidate();
-                request.getRequestDispatcher("/paginas/login.jsp").forward(request, response);
+            HttpSession  obsSession = request.getSession();
+            obsSession.invalidate();
+            response.sendRedirect("/WebVales/paginas/login.jsp");
         }
     }
 

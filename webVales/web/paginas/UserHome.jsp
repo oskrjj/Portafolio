@@ -3,11 +3,12 @@
     Created on : 28-sep-2017, 20:15:19
     Author     : Malandragem
 --%>
+<%@page import="sun.security.krb5.internal.Ticket"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="Dto.UsuarioDto"%>
 <%@page import="Dto.CargoDto"%>
 <%@page import="Dto.EmpleadoDto"%>
-<%@page import="java.util.Date" %>@
+<%@page import="java.util.Date" %>
 <%@page import="java.util.GregorianCalendar" %>
 <%
 
@@ -22,7 +23,7 @@
   nombre = dtoempleado.ObtenerNombre(rut);
   //String nombre = (String) ss.getAttribute("sesionNombre");
   ss.setAttribute("rut", rut);
-  
+  String idComensal = userdto.RetornoIdComensal(rut);
 
   
 %>
@@ -43,8 +44,27 @@
         <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="../css/bootstrap.css"/>
         <link rel="stylesheet" href="../css/estilo.css"/>
+        <link rel="stylesheet" href="../css/Modal.css"/>
+        <script src="../js/ListarCMB.js" type="text/javascript"></script>
+        <script src="../js/jquery-3.2.1.js" type="text/javascript"></script>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script>    
+            $(document).ready(function(){
+                $.getJSON("/WebVales/ListarServicios",function(servicios){
+                    $.each(servicios, function(indice, servicio){
+                        jQuery("select[name='ddl_servicios']").append("<option value=\"" + servicio.DescripcionServicio + "\">" + servicio.DescripcionServicio + "</option>");            
+                    }) ;
+                }); 
+
+            });  
+            function AbrirModal(){
+                $(".VModel").slideDown("slow");
+            }
+            function CloseModal(){
+                $(".VModel").slideUp("fast");
+            }
+        </script>
         <title>Administracion Vales|
             <%
                 if (rut != null) {
@@ -80,6 +100,32 @@
       
     </head>
     <body>  
+        <div class="General">
+            <div class="VModel">
+                
+                <div class="Cuerpo">
+                    <div class="cerrar"><a href="javascript:CloseModal();">  X </a></div>
+                    <table>
+                        <th> </th>
+                        <th> 
+                                   TICKET DE COLACION
+                                    ==================
+                        </th>
+                        
+                        <tr>
+                            <td></td>
+                            <td rowspan="4">
+                                <%
+                                    String ticket = request.getParameter("Ticket");
+                                    out.println(ticket);
+                                    %>
+                            </td>
+                             
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
          <h1 style="text-align:center;"><strong>Ticket</strong></h1>  
         <div class="container">
             <div class="panel panel-body">
@@ -89,6 +135,7 @@
                         <th>Nombre Usuario</th>
                         <th>Valor vale</th>
                         <th>Fecha<th>
+                        
                     </tr>
        
                     <tr>
@@ -109,55 +156,129 @@
          
         <div class="container">
             <div class="panel panel-body">
-                <form  method="POST" action="ServAdminVale.java" name="formVale">
-        <table class="table table-responsive table-bordered">
+                <form  method="POST" action="/WebVales/AgregarTicket" name="formVale">
+                    <input type="text" name="txtRut" value="<%=rut%>"  hidden="true">
+                    <input type="text" name="txtNombre" value="<%=nombre%>"  hidden="true">
+                    <input type="text" name="txtValor" value="<%=valor%>" hidden="true">
+                    <input type="text" name="txtComensal" value="<%=idComensal%>" hidden="true" >
+                <table class="table table-responsive table-bordered">
                     <tr class="danger">
-                        <th>Turno</th>
                         <th>Servicios</th>
-                        <th>Seleccione</th>
+                        <th id="ServiciosEspeciales" hidden="true">Servicios Especiales</th>
+                        
                     </tr>
        
-                   
-                        <%if (turno.equals("1")) {%>
+                    <% if(idComensal.equals("2")){%>
+                        <script>
+                            $("#ServiciosEspeciales").show()
+                        </script>
+                    <%}%>
+                        <<%if (turno.equals("1")) {%>
                             <tr>
-                                <td> Turno 1   </td>
-                                <td> Desayuno 1  </td>
-                                <td><input type="radio" name="servicio" value="servicio" ></td>
+                                <td>
+                                    <select name="ddl_servicioB">
+                                            width: 100%;
+                                            height: 34px;
+                                            padding: 6px 12px;
+                                            font-size: 14px;
+                                            line-height: 1.42857143;
+                                            color: #555;
+                                            background-color: #fff;
+                                            background-image: none;
+                                            border: 1px solid #ccc;
+                                            border-radius: 4px;">
+                                        <option value="b"> -- Seleccione Servicio Base  -- </option>
+                                        <option value="Desayuno 1">  Desayuno 1   </option>
+                                        <option value="Almuerzo">  Almuerzo   </option>
+                                    </select>
+                                </td>
+                                
                              </tr>  
-                             <tr>
-                                <td> Turno 1   </td>
-                                <td> Almuerzo   </td>
-                                <td><input type="radio" name="servicio" value="servicio" ></td>
-                             </tr>
+                            
                         <%}%>
                         <%if (turno.equals("2")) {%>
-                            <tr>
-                                <td> Turno 2   </td>
-                                <td> Cena 1  </td>
-                                <td><input type="radio" name="servicio" value="servicio" ></td>
-                             </tr>  
-                             
+                        <td>
+                                    <select name="ddl_servicioB">
+                                            width: 100%;
+                                            height: 34px;
+                                            padding: 6px 12px;
+                                            font-size: 14px;
+                                            line-height: 1.42857143;
+                                            color: #555;
+                                            background-color: #fff;
+                                            background-image: none;
+                                            border: 1px solid #ccc;
+                                            border-radius: 4px;">
+                                        <option value="b"> -- Seleccione Servicio Base  -- </option>
+                                        <option value="Cena  1">  Cena  1   </option>
+                                        
+                                    </select>
+                                </td>
                         <%}%>
                         <%if (turno.equals("3")) {%>
-                            <tr>
-                                <td> Turno 3   </td>
-                                <td> Cena 2  </td>
-                                <td><input type="radio" name="servicio" value="servicio" ></td>
-                             </tr>  
-                             <tr>
-                                <td> Turno 3   </td>
-                                <td> Desayuno 2   </td>
-                                <td><input type="radio" name="servicio" value="servicio" ></td>
-                             </tr>
+                        <td>
+                                    <select name="ddl_servicioB">
+                                            width: 100%;
+                                            height: 34px;
+                                            padding: 6px 12px;
+                                            font-size: 14px;
+                                            line-height: 1.42857143;
+                                            color: #555;
+                                            background-color: #fff;
+                                            background-image: none;
+                                            border: 1px solid #ccc;
+                                            border-radius: 4px;">
+                                        <option value="b"> -- Seleccione Servicio Base  -- </option>
+                                        <option value="Cena  2">  Cena  2   </option>
+                                        <option value="Desayuno   2">  Desayuno   2   </option>
+                                    </select>
+                                </td>
                         <%}%>
+                        <%if(idComensal.equals("2")){%>
+                            <td>
+                                <select name="ddl_servicios" >
+                                            width: 100%;
+                                            height: 34px;
+                                            padding: 6px 12px;
+                                            font-size: 14px;
+                                            line-height: 1.42857143;
+                                            color: #555;
+                                            background-color: #fff;
+                                            background-image: none;
+                                            border: 1px solid #ccc;
+                                            border-radius: 4px;">
+                                        <option value="e"> -- Seleccione Servicio Especial -- </option>
+                                    </select>
+                            </td>   
+                        <%}%>
+                        <td>
+                                <select name="ddl_servicios" hidden ="true" id="ServiciosEspeciales">
+                                            width: 100%;
+                                            height: 34px;
+                                            padding: 6px 12px;
+                                            font-size: 14px;
+                                            line-height: 1.42857143;
+                                            color: #555;
+                                            background-color: #fff;
+                                            background-image: none;
+                                            border: 1px solid #ccc;
+                                            border-radius: 4px;">
+                                        <option value="e"> -- Seleccione Servicio Especial -- </option>
+                                    </select>
+                            </td> 
+                        <td>
+                            <input  class="btn btn-danger" type="submit" value="Generar vale"/>
                         
-                                                   
-        </table>
+                        </td>
+         </table>
+                        
        </form>
             </div>
         </div>  
+               
         <center>
-            <input class="btn btn-danger" type="submit" value="Generar vale"/>
+            <input type="submit" class="btn btn-danger" value="Retirar Vale" onclick="AbrirModal()">
+            
         </center>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 

@@ -46,4 +46,8 @@ public class ServicioDto {
         ServicioDao dao = new ServicioDao();
         return dao.ListarServicios();
     }
+    public boolean EliminarServicio(String id){
+        ServicioDao dao = new ServicioDao();
+        return dao.Eliminarservicio(id);
+    }
 }
