@@ -116,6 +116,24 @@
             </div>
 
         </div>  
+            </div>
+            <div id="adminVales" class="divMenu">
+
+                <a href="/WebVales/paginas/adminVales.jsp"type="button" 
+                   class="btn btn-default btn-lg btn-block">Admistrar Vales</a>
+            </div>
+            <div id="adminTurnos" class="divMenu">
+                <a href="adminTurnos.jsp"type="button" 
+                   class="btn btn-warning btn-lg btn-block">Administrar Turnos</a>
+            </div>
+        </div>
+        <% String mensaje = (String) request.getAttribute("mensaje");
+                    if (mensaje != null) {%>
+                <script>
+                    alert("<%=mensaje%>");
+                </script>
+                <%}%>
+
     </div>   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 

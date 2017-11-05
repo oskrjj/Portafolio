@@ -30,12 +30,12 @@
         <link rel="stylesheet" href="../css/estilo.css"/>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="../js/ListaCMB.js"></script>
-        <script src="../js/listaEmpleados.js"></script>
+        <script src="../js/listaEmpleados.js" > </script>
         <link href="../css/vendor/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/vendor/font-awesome.min.css" type="text/css" rel="stylesheet">
         <link href="../css/jquery.bdt.css" type="text/css" rel="stylesheet">
-        <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <script src="../js/vendor/jquery.sortelements.js" type="text/javascript"></script>
-        <script src="../js/jquery.bdt.min.js" type="text/javascript"></script>
+        <link href="../css/style.css" type="text/css" rel="stylesheet">
+       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
               integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -93,27 +93,43 @@
         <div class="container">
             <div class="tab-content">
                 <div id="listaUsuarios" class="tab-pane fade in active">
-                    <Strong class="text-danger">Lista de Usuario</strong>
                     <div class="container">
                         <div class="panel panel-body">
                             <table class="table table-hover" id="TablaEmpleados">
-                                <tr class="danger" >
-                                    <th>Rut</th>
-                                    <th>Nombre Usuario</th>
-                                    <th>Correo</th>
-                                    <th>Seleccione</th>
-                                </tr> 
+		                <thead>
+                                    <tr class="danger" >
+                                        <th class="disable-sorting">Rut</th>
+                                        <th>Nombre Usuario</th>
+                                        <th>Correo</th>
+                                        <th>Seleccione</th>
+                                    </tr> 
+		                </thead>
                             </table>
                         </div>
                     </div>  
-                    <form class="navbar-form navbar-left" role="Buscar por rut">
-                        <div class="form-group" >
-                            <input type="text" class="form-control" placeholder="Filtrar por rut">
-                        </div>
-                        <button type="submit" class="btn btn-default">Buscar</button>
-                        <button type="submit" class="btn btn-success">Modificar</button>
-                        <button type="submit" class="btn btn-danger ">Eliminar</button>
-                    </form>
+                    <%--<form class="navbar-form navbar-left" role="Buscar por rut" id="FormBuscar" method="POST"> --%> 
+                    <%--    <div class="form-group" > --%> 
+                    <%--        <input type="text" id="UserFind" class="form-control" placeholder="Filtrar por rut"> --%> 
+                    <%--    </div> --%> 
+                    <%--    <input type="submit" class="btn btn-default" id="BuscarUser" value="Buscar">--%> 
+                        
+                    <%--</form>--%> 
+                    <script type="text/javascript">
+                        // $("#FormBuscar").submit(function(event){
+                        //     var $findUser = $("#UserFind").val();
+                        //     $('#TablaEmpleados').empty();
+                        //     $.ajax({
+                        //        url: '/WebVales/BuscarUsuarioPorRut',
+                        //        dataType: 'json',
+                        //       data : { rut: $findUser},
+                        //       type : 'POST',
+                        //    }).done(function(response){
+                        //        if (response.NombreEmpleado != " " || response.NombreEmpleado != null) {  
+                        //            alert(response.NombreEmpleado);
+                        //        }
+                                
+                        //    })
+                    </script>
                 </div>
 
 
@@ -249,7 +265,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+         <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="../js/vendor/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../js/vendor/jquery.sortelements.js" type="text/javascript"></script>
+        <script src="../js/jquery.bdt.min.js" type="text/javascript"></script>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
 
 

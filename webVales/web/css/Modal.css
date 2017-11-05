@@ -1,13 +1,5 @@
-.container{
-    width: 800px;
-    height: 1200px;
-    background-color: #fff;
-    border:solid 2px #999;
-    margin: auto;
-    font-family: Arial;
-    padding: 20px;
-}
-.ventana{
+
+.VModel{
     width: 100%;
     height: 100%;
     color: #fff;
@@ -16,16 +8,21 @@
     /*background-color: #e38d13;*/
     top:0;
     left:0;
+    display:none;
 }
-.AddUser{
+.Cuerpo{
     width: 300px;
     height: 300px;
     padding: 25px;
-    background-color: #fff;
-    color: #666;
+    background-color: #000;
     top: 50%;
     left: 50%;
     position: absolute;
-    margin-lef: -175px;
+    margin-left: -175px;
     margin-top: -175px;
+}
+.cerrar{
+    color: red;
+    fond-weight: 800;
+    text-align: right;  
 }

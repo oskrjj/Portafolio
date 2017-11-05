@@ -65,4 +65,8 @@ public class ValeDto {
         ValeDao daovale = new ValeDao();
         return daovale.ListarTickets();
     }
+    public String AgregarVale(String rut, String nombre, String servicio, int valor, String idComensal){
+        ValeDao daovale = new ValeDao();
+        return daovale.AgregarTicket(rut, nombre, servicio, valor, idComensal);
+    }
 }

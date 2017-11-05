@@ -90,8 +90,6 @@
                                         <th>Servicio</th>
                                         <th>Valor</th>
                                         <th>Fecha Emision</th>
-                                        <th>Seleccione</th>
-
                                     </tr>                     
                                 </table>
                             </div>

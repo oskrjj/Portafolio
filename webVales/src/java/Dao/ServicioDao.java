@@ -40,6 +40,9 @@ public class ServicioDao {
     public String ListarServicios(){
         return ServicioDao.listarServicio();
     }
+    public boolean Eliminarservicio(String id){
+        return ServicioDao.eliminarServicio(id);
+    }
 
     private static Boolean agregarServicio(java.lang.String id, java.lang.String descripcion) {
         org.tempuri.EndService service = new org.tempuri.EndService();
@@ -51,6 +54,12 @@ public class ServicioDao {
         org.tempuri.EndService service = new org.tempuri.EndService();
         org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.listarServicio();
+    }
+
+    private static Boolean eliminarServicio(java.lang.String id) {
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
+        return port.eliminarServicio(id);
     }
 
     

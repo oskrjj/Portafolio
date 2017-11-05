@@ -62,9 +62,11 @@ public class UsuarioDao {
     public  boolean insertarUser(String rut, String pass, String tipo, String comensal){
         return UsuarioDao.agregarUsuario(rut, pass, tipo, comensal);
     }
-    
-    public static boolean elimUser(String rut){
-        return UsuarioDao.elimUser(rut);
+    public String RetornoIdComensal(String rut){
+        return UsuarioDao.retornIdComensal(rut);
+    }
+    public  boolean elimUser(String rut){
+        return UsuarioDao.eliminarUsuario(rut);
     }
 
     private static Boolean validarLogin(java.lang.String rut, java.lang.String password) {
@@ -91,6 +93,12 @@ public class UsuarioDao {
         org.tempuri.EndService service = new org.tempuri.EndService();
         org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.agregarUsuario(rut, pass, tipo, id);
+    }
+
+    private static String retornIdComensal(java.lang.String rut) {
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
+        return port.retornIdComensal(rut);
     }
 
   

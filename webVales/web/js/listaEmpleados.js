@@ -6,14 +6,23 @@ $(document).ready(function(){
             table += '<td>'+empleado.RutEmpleado+'</td>';
             table += '<td>'+empleado.NombreEmpleado+'</td>';
             table += '<td>'+empleado.CorreoEmpleado+'</td>';
-            table += '<td> <input type ="radio" value='+empleado.RutEmpleado+'</td>';
+            
+            table += '<td> \n\
+                    <form action="/WebVales/EliminarUsuario" method="POST"  >\n\
+                        <button type="submit" class="btn btn-default">Eliminar</button>\n\
+                        <input type ="text" name="txtRutEliminar" value='+empleado.RutEmpleado+' hidden="true"></td>\n\
+                    </form>';
             table += '</tr>';
         }) ;
         $('#TablaEmpleados').append(table);
+
     }); 
-   $('#TablaEmpleados').bdt({
+            $('#TablaEmpleados').bdt({
                     showSearchForm: 1,
                     showEntriesPerPageField: 1
                 });
+    
+                
+                
 });  
 

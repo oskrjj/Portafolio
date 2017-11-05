@@ -64,7 +64,10 @@ public class EmpleadoDto {
         EmpleadoDao empDao = new EmpleadoDao();
         return empDao.ingresarEmpleado(rut, nomc, correo, cargoId, turnoId);
     }
-    
+    public String ListarEmpleadoPorRut(String rut){
+        EmpleadoDao empdao = new EmpleadoDao();
+        return empdao.ListarEmpleadoPorRut(rut);
+    }
     public  boolean elimEmp(String rut){
         EmpleadoDao empDao = new EmpleadoDao();
         return empDao.elimEmpleado(rut);

@@ -62,10 +62,19 @@ public class ValeDao {
     public String ListarTickets(){
         return ValeDao.listarTickets();
     }
+    public String AgregarTicket(String rut, String nombre, String servicio, int valor, String idComensal){
+        return ValeDao.agregarVale(rut, nombre, servicio, valor, idComensal);
+    }
     private static String listarTickets() {
         org.tempuri.EndService service = new org.tempuri.EndService();
         org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
         return port.listarTickets();
+    }
+
+    private static String agregarVale(java.lang.String empleadorut, java.lang.String nombreempleado, java.lang.String servicioTicket, java.lang.Integer valorVale, java.lang.String idComensal) {
+        org.tempuri.EndService service = new org.tempuri.EndService();
+        org.tempuri.IEndService port = service.getBasicHttpBindingIEndService();
+        return port.agregarVale(empleadorut, nombreempleado, servicioTicket, valorVale, idComensal);
     }
     
     

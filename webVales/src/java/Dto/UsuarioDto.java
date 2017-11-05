@@ -66,7 +66,10 @@ public class UsuarioDto {
                 ", tipo_usuario_id=" + tipo_usuario_id + '}';
     }
     
-    
+    public boolean EliminarUsuario(String rut){
+        UsuarioDao userdao = new UsuarioDao();
+        return userdao.elimUser(rut);
+    }
     public  static boolean ValidarLog(String rut, String pass){
         
         UsuarioDao userdao = new UsuarioDao();
@@ -82,5 +85,9 @@ public class UsuarioDto {
         return userdao.insertarUser(rut, pass, tipo, comensal);
     }
     
+    public String RetornoIdComensal(String rut){
+        UsuarioDao userdao = new UsuarioDao();
+        return userdao.RetornoIdComensal(rut);
+    }
     
 }
